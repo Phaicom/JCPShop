@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ReviewDetailPage } from '../review-detail/review-detail';
 
 /**
- * Generated class for the BrowsePage page.
+ * Generated class for the ReviewDetailPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,20 +10,16 @@ import { ReviewDetailPage } from '../review-detail/review-detail';
 
 @IonicPage()
 @Component({
-  selector: 'page-browse',
-  templateUrl: 'browse.html',
+  selector: 'page-review-detail',
+  templateUrl: 'review-detail.html',
 })
-export class BrowsePage {
+export class ReviewDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BrowsePage');
-  }
-
-  reviewDetail() {
-  	this.navCtrl.push(ReviewDetailPage);
+    console.log('ionViewDidLoad ReviewDetailPage');
   }
 
 }

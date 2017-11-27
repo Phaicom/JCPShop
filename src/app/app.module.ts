@@ -12,6 +12,8 @@ import { IonicStorageModule } from "@ionic/storage";
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MarketDataProvider, UserDataProvider } from "../providers/providers";
+import { ReviewDetailPage } from '../pages/review-detail/review-detail';
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",
@@ -25,11 +27,21 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage
+    TabsPage,
+    ReviewDetailPage,
+    ParallaxHeaderDirective
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      tabsPlacement: 'top',
+      platforms: {
+        ios: {
+          backButtonText: '',
+          tabsPlacement: 'bottom',
+        }
+      }
+    }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
@@ -38,7 +50,8 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TabsPage
+    TabsPage,
+    ReviewDetailPage
   ],
   providers: [
     StatusBar,
