@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the BrowsetabPage page.
+ * Generated class for the MarketPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-browsetab',
-  templateUrl: 'browsetab.html',
+  selector: 'page-market',
+  templateUrl: 'market.html',
 })
-export class BrowsetabPage {
+export class MarketPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BrowsetabPage');
+    console.log('ionViewDidLoad MarketPage');
   }
 
 }
