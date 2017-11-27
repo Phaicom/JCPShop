@@ -5,10 +5,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { Facebook } from '@ionic-native/facebook';
+import { IonicStorageModule } from "@ionic/storage";
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
-import { MarketDataProvider } from '../providers/market-data/market-data';
+import { MarketDataProvider, UserDataProvider } from "../providers/providers";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",
@@ -29,6 +32,8 @@ export const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -39,7 +44,9 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    MarketDataProvider
+    MarketDataProvider,
+    UserDataProvider,
+    Facebook
   ]
 })
 export class AppModule { }
