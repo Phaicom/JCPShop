@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ReviewDetailPage } from '../review-detail/review-detail';
 import { ShopDetailPage } from '../shop-detail/shop-detail';
 import { StyleDetailPage } from '../style-detail/style-detail';
@@ -22,7 +22,10 @@ import { SEARCH_PAGE } from "../pages.constants";
 })
 export class BrowsePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public events: Events) {
   }
 
   ionViewDidLoad() {
@@ -54,6 +57,6 @@ export class BrowsePage {
   }
 
   openSearch() {
-    this.navCtrl.push(SEARCH_PAGE);
+    this.events.publish('open:search');
   }
 }
