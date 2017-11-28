@@ -1,11 +1,12 @@
-export class User {
+export class Market {
   id: string; // fireStore id use to delete and update
-  displayName: string;
+  name: string;
   email: string;
   phoneNumber: number;
   photoURL: string;
-  providerId: string;
-  uid: string;
+  description: string;
+  date: string; // opening date
+  mid: string;
 
   constructor(parameters) {
 

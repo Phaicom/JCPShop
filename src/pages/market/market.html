@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>Market</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="logout()">
         <ion-icon name="search"></ion-icon>
       </button>
       <button ion-button icon-only>
@@ -25,5 +25,9 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let user of usersList | async">
+      {{user.displayName}}
+    </ion-item>
+  </ion-list>
 </ion-content>

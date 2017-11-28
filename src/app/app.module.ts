@@ -8,18 +8,15 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Facebook } from '@ionic-native/facebook';
 import { IonicStorageModule } from "@ionic/storage";
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MarketDataProvider, UserDataProvider } from "../providers/providers";
-import { ReviewDetailPage } from '../pages/review-detail/review-detail';
-import { ShopDetailPage } from '../pages/shop-detail/shop-detail';
-import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
-import { PhotoViewer } from '@ionic-native/photo-viewer';
-import { StyleDetailPage } from '../pages/style-detail/style-detail';
-import { AllBrandPage } from '../pages/all-brand/all-brand';
-import { AllReviewPage } from '../pages/all-review/all-review';
-import { AllStylePage } from '../pages/all-style/all-style';
+import { UsersDataProvider } from '../providers/users-data/users-data';
+import { ItemDataProvider } from '../providers/item-data/item-data';
+import { OrderDataProvider } from '../providers/order-data/order-data';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",
@@ -34,13 +31,7 @@ export const firebaseConfig = {
   declarations: [
     MyApp,
     TabsPage,
-    ReviewDetailPage,
-    ParallaxHeaderDirective,
-    ShopDetailPage,
-    StyleDetailPage,
-    AllStylePage,
-    AllBrandPage,
-    AllReviewPage
+    ParallaxHeaderDirective
   ],
   imports: [
     BrowserModule,
@@ -61,13 +52,7 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    TabsPage,
-    ReviewDetailPage,
-    ShopDetailPage,
-    StyleDetailPage,
-    AllStylePage,
-    AllBrandPage,
-    AllReviewPage
+    TabsPage
   ],
   providers: [
     StatusBar,
@@ -76,7 +61,10 @@ export const firebaseConfig = {
     MarketDataProvider,
     UserDataProvider,
     Facebook,
-    PhotoViewer
+    PhotoViewer,
+    UsersDataProvider,
+    ItemDataProvider,
+    OrderDataProvider
   ]
 })
 export class AppModule { }
