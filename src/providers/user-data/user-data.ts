@@ -46,7 +46,8 @@ export class UserDataProvider {
       }
 
       // add user to db if user not exist in db
-      this.usersDataProvider.usersList.subscribe(users => {
+      let usersList = this.usersDataProvider.getUser();
+      usersList.subscribe(users => {
         let filterList = users.filter(user => {
           if (user.uid === data.uid) {
             return user;

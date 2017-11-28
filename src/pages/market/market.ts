@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersDataProvider, UserDataProvider } from "../../providers/providers";
+import { Observable } from 'rxjs/Observable';
 import { User } from "../../models/user";
 
 /**
@@ -16,12 +17,15 @@ import { User } from "../../models/user";
   templateUrl: 'market.html',
 })
 export class MarketPage {
+  usersList: Observable<User[]>;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public usersDataProvider: UsersDataProvider,
     public userDataProvider: UserDataProvider
   ) {
+    this.usersList = this.usersDataProvider.getUser();
   }
 
   ionViewDidLoad() {

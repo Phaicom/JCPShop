@@ -12,13 +12,15 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class UsersDataProvider {
   usersListRef: AngularFirestoreCollection<User>;
-  usersList: Observable<User[]>;
 
   constructor(
     public fireStore: AngularFirestore
   ) {
     this.usersListRef = this.fireStore.collection<User>(`/usersList`);
-    this.usersList = this.usersListRef.snapshotChanges().map(actions => {
+  }
+
+  getUser(): Observable<User[]> {
+    return this.usersListRef.snapshotChanges().map(actions => {
       return actions.map(action => {
         let data = action.payload.doc.data() as User;
         const id = action.payload.doc.id;
