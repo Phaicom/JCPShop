@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ReviewDetailPage } from '../review-detail/review-detail';
-import { ShopDetailPage } from '../shop-detail/shop-detail';
-import { StyleDetailPage } from '../style-detail/style-detail';
-import { AllBrandPage } from '../all-brand/all-brand';
-import { AllReviewPage } from '../all-review/all-review';
-import { AllStylePage } from '../all-style/all-style';
+
+
+import { REVIEW_DETAIL_PAGE, SHOP_DETAIL_PAGE, STYLE_DETAIL_PAGE, ALL_BRAND_PAGE, ALL_REVIEW_PAGE, ALL_STYLE_PAGE } from '../pages.constants';
 
 /**
  * Generated class for the BrowsePage page.
@@ -29,27 +26,27 @@ export class BrowsePage {
   }
 
   reviewDetail() {
-  	this.navCtrl.push(ReviewDetailPage);
+  	this.navCtrl.push(REVIEW_DETAIL_PAGE);
   }
 
   shopDetail() {
-    this.navCtrl.push(ShopDetailPage);
+    this.navCtrl.push(SHOP_DETAIL_PAGE);
   }
 
   styleDetail() {
-    this.navCtrl.push(StyleDetailPage);
+    this.navCtrl.push(STYLE_DETAIL_PAGE);
   }
 
   allBrand() {
-    this.navCtrl.push(AllBrandPage);
+    this.navCtrl.push(ALL_BRAND_PAGE);
   }
 
   allReview() {
-    this.navCtrl.push(AllReviewPage);
+    this.navCtrl.push(ALL_REVIEW_PAGE);
   }
 
   allStyle() {
-    this.navCtrl.push(AllStylePage);
+    this.navCtrl.push(ALL_STYLE_PAGE);
   }
 
 }
