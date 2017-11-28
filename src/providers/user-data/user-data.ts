@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { User } from "../../models/user";
+import { UsersDataProvider } from "../users-data/users-data";
 
 /*
   Generated class for the UserDataProvider provider.
@@ -24,7 +25,9 @@ export class UserDataProvider {
     private platform: Platform,
     public events: Events,
     public storage: Storage,
-    public splashScreen: SplashScreen) {
+    public splashScreen: SplashScreen,
+    public usersDataProvider: UsersDataProvider
+  ) {
     afAuth.authState.subscribe((user: firebase.User) => {
       console.log(user);
       if (!user) {
@@ -33,6 +36,7 @@ export class UserDataProvider {
       }
 
       let data = {
+        id: '',
         displayName: user.displayName,
         email: user.email,
         phoneNumber: +user.phoneNumber,
@@ -40,6 +44,21 @@ export class UserDataProvider {
         providerId: user.providerId,
         uid: user.uid
       }
+
+      // add user to db if user not exist in db
+      this.usersDataProvider.usersList.subscribe(users => {
+        let filterList = users.filter(user => {
+          if (user.uid === data.uid) {
+            return user;
+          }
+        });
+
+        if (filterList.length <= 0) {
+          this.usersDataProvider.addUser(data);
+        }
+      });
+
+      // set user to device storage for internal fetching
       this.storage.set('user', data);
       this.storage.set(this.HAS_LOGGED_IN, true);
       this.setUser(data);
@@ -48,6 +67,7 @@ export class UserDataProvider {
     });
   }
 
+  // login method
   login() {
     this.splashScreen.show();
     if (this.platform.is('cordova')) {
@@ -68,6 +88,8 @@ export class UserDataProvider {
     }
   }
 
+
+  // logout method
   logout(): void {
     this.splashScreen.show();
     this.afAuth.auth
@@ -80,12 +102,16 @@ export class UserDataProvider {
       })
   };
 
+
+  // check for user login
   hasLoggedIn(): Promise<boolean> {
     return this.storage.get(this.HAS_LOGGED_IN).then((value) => {
       return value === true;
     });
   };
 
+
+  // set user to device storage
   setUser(user: User): void {
     this.storage.set('user', user);
   }
