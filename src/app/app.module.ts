@@ -8,14 +8,15 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Facebook } from '@ionic-native/facebook';
 import { IonicStorageModule } from "@ionic/storage";
-import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
-import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 import { MyApp } from './app.component';
 import { MarketDataProvider, UserDataProvider } from "../providers/providers";
 import { UsersDataProvider } from '../providers/users-data/users-data';
 import { ItemDataProvider } from '../providers/item-data/item-data';
 import { OrderDataProvider } from '../providers/order-data/order-data';
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",
@@ -33,19 +34,12 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {
-      tabsPlacement: 'top',
-      platforms: {
-        ios: {
-          backButtonText: '',
-          tabsPlacement: 'bottom',
-        }
-      }
-    }),
+    IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,10 +52,10 @@ export const firebaseConfig = {
     MarketDataProvider,
     UserDataProvider,
     Facebook,
-    PhotoViewer,
     UsersDataProvider,
     ItemDataProvider,
-    OrderDataProvider
+    OrderDataProvider,
+    PhotoViewer
   ]
 })
 export class AppModule { }
