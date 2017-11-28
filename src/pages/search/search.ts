@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the SearchPage page.
@@ -16,12 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SearchPage {
   searchType: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public events: Events, ) {
     this.searchType = "item";
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchPage');
+  }
+
+  closeSearch() {
+    this.events.publish('close:search');
   }
 
 }

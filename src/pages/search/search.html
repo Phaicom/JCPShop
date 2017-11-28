@@ -7,6 +7,11 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="closeSearch()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-searchbar [placeholder]="'Search for '+searchType+'s'"></ion-searchbar>
   </ion-navbar>
 

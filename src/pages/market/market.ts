@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersDataProvider, UserDataProvider } from "../../providers/providers";
 import { Observable } from 'rxjs/Observable';
 import { User } from "../../models/user";
@@ -24,6 +24,7 @@ export class MarketPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public events: Events,
     public usersDataProvider: UsersDataProvider,
     public userDataProvider: UserDataProvider
   ) {
@@ -36,7 +37,7 @@ export class MarketPage {
 
 
   openSearch() {
-    this.navCtrl.push(SEARCH_PAGE);
+    this.events.publish('open:search');
   }
 
 }
