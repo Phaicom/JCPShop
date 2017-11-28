@@ -1,0 +1,19 @@
+page-style-detail {
+	.header-image {
+	    height: 40vh;
+	}
+	 
+	.main-content {
+		width:100%;
+	    padding: 20px;
+	    background-color: white;
+	}
+
+	.ellipsis {
+		padding: 5px;
+	  	overflow: hidden;
+	  	max-height: 42px;
+	  	text-overflow: ellipsis;
+	  
+	}
+}

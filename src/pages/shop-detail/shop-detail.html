@@ -1,0 +1,135 @@
+<!--
+  Generated template for the ShopDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hide-tabs>
+    <ion-title>shop-detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content parallax-header style="background-color: #ececec;">
+ 
+  <div class="header-image" style="background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950);" (click)="showPhotoViewer('https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950')">
+
+    <div class="backgroundShopDetail" align="center">
+      <img src="100-100.png" class="picture" align="center" (click)="showPhotoViewer('https://devdactic.com/wp-content/uploads/2017/04/ionic-image-gallery-header-720x400.png')"/>
+      <button ion-button color="red" id="btnFollow">Follow</button>
+      <div>
+        <span>Shop name &nbsp;<ion-icon name="mail"></ion-icon></span>
+      </div>
+      <div>
+        <span><b>4</b> &nbsp;Followers</span>
+      </div>
+      <div align="left">
+        <span>Verified Shop: &nbsp;</span>
+      </div>
+      <ion-grid no-padding align="left">
+        <ion-row>
+          <ion-col col-12><p>shop detail</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="main-content">
+    
+    <ion-header>
+      <ion-navbar>
+        <div>
+          <ion-segment [(ngModel)]="tabShopDetail">
+            <ion-segment-button value="sellingList">
+              SELLING LIST
+            </ion-segment-button>
+            <ion-segment-button value="shopInfo">
+              SHOP INFO
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+
+        <div [ngSwitch]="tabShopDetail">
+          <ion-list *ngSwitchCase="'sellingList'">
+            <ion-item>
+              <ion-grid no-padding>
+                <ion-row>
+                  <ion-col col-6 no-padding>
+                    <ion-card>
+                      <img src="125-125.png">
+                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                      <b>500 THB</b>
+                      <div>
+                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
+                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
+                      </div>
+                    </ion-card>
+                  </ion-col>
+                  <ion-col col-6 no-padding>
+                    <ion-card>
+                      <img src="125-125.png">
+                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                      <b>500 THB</b>
+                      <div>
+                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
+                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
+                      </div>
+                    </ion-card>
+                  </ion-col>
+                  <ion-col col-6 no-padding>
+                    <ion-card>
+                      <img src="125-125.png">
+                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                      <b>500 THB</b>
+                      <div>
+                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
+                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
+                      </div>
+                    </ion-card>
+                  </ion-col>
+                  <ion-col col-6 no-padding>
+                    <ion-card>
+                      <img src="125-125.png">
+                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                      <b>500 THB</b>
+                      <div>
+                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
+                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
+                      </div>
+                    </ion-card>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'shopInfo'">
+            <ion-item no-padding>
+              <button ion-item>
+                <ion-card>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-6 align="left">
+                        <p>Shop Owner</p>
+                        <p>dummy name</p>
+                    </ion-col>
+                    <ion-col col-6 align="right">
+                        <img src="https://pixy.org/src/476/4764586.png" style="width: 30px; height: 30px; margin-right: 10px;" align="right">
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card>
+              </button> 
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-navbar>
+    </ion-header>
+ 
+  </div>
+ 
+</ion-content>

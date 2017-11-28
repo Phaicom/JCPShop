@@ -1,0 +1,20 @@
+page-all-style {
+	#detailPage {
+		width: 100%;
+		height: 70px;
+		background-image: url(https://static01.nyt.com/images/2017/10/06/arts/06fashionmoma4alt/06fashionmoma4alt-master675.jpg);
+		margin-bottom: 20px;
+	}
+
+	#textDetail {
+		width: 100%;
+	}
+
+	.ellipsis {
+		padding: 5px;
+	  	overflow: hidden;
+	  	max-height: 47px;
+	  	text-overflow: ellipsis;
+	  
+	}
+}
