@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SEARCH_PAGE } from "../pages.constants";
 
 /**
  * Generated class for the MyProfilePage page.
@@ -20,6 +21,10 @@ export class MyProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MyProfilePage');
+  }
+
+  openSearch() {
+    this.navCtrl.push(SEARCH_PAGE);
   }
 
 }

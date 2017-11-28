@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersDataProvider, UserDataProvider } from "../../providers/providers";
 import { Observable } from 'rxjs/Observable';
 import { User } from "../../models/user";
+import { SEARCH_PAGE } from "../pages.constants";
 
 /**
  * Generated class for the MarketPage page.
@@ -34,6 +35,10 @@ export class MarketPage {
 
   logout() {
     this.userDataProvider.logout();
+  }
+
+  openSearch() {
+    this.navCtrl.push(SEARCH_PAGE);
   }
 
 }

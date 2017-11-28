@@ -12,7 +12,6 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 import { MyApp } from './app.component';
-import { TabsPage } from '../pages/tabs/tabs';
 import { MarketDataProvider, UserDataProvider } from "../providers/providers";
 import { UsersDataProvider } from '../providers/users-data/users-data';
 import { ItemDataProvider } from '../providers/item-data/item-data';
@@ -30,7 +29,6 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage,
     ParallaxHeaderDirective
   ],
   imports: [
@@ -51,8 +49,7 @@ export const firebaseConfig = {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    TabsPage
+    MyApp
   ],
   providers: [
     StatusBar,

@@ -1,4 +1,6 @@
 //Constants for getting type references
+export const TABS_PAGE = 'TabsPage';
+
 export const MARKET_PAGE = 'MarketPage';
 export const BROWSE_PAGE = 'BrowsePage';
 export const FOLLOWING_PAGE = 'FollowingPage';
@@ -11,3 +13,4 @@ export const STYLE_DETAIL_PAGE = 'StyleDetailPage';
 export const ALL_BRAND_PAGE = 'AllBrandPage';
 export const ALL_REVIEW_PAGE = 'AllReviewPage';
 export const ALL_STYLE_PAGE = 'AllStylePage';
+export const SEARCH_PAGE = 'SearchPage';

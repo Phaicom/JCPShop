@@ -6,6 +6,7 @@ import { StyleDetailPage } from '../style-detail/style-detail';
 import { AllBrandPage } from '../all-brand/all-brand';
 import { AllReviewPage } from '../all-review/all-review';
 import { AllStylePage } from '../all-style/all-style';
+import { SEARCH_PAGE } from "../pages.constants";
 
 /**
  * Generated class for the BrowsePage page.
@@ -29,7 +30,7 @@ export class BrowsePage {
   }
 
   reviewDetail() {
-  	this.navCtrl.push(ReviewDetailPage);
+    this.navCtrl.push(ReviewDetailPage);
   }
 
   shopDetail() {
@@ -52,4 +53,7 @@ export class BrowsePage {
     this.navCtrl.push(AllStylePage);
   }
 
+  openSearch() {
+    this.navCtrl.push(SEARCH_PAGE);
+  }
 }
