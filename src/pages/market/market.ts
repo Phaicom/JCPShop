@@ -17,7 +17,8 @@ import { User } from "../../models/user";
   templateUrl: 'market.html',
 })
 export class MarketPage {
-  usersList: Observable<User[]>;
+
+  images = [ '100-100.png', '125-100.png', '125-125.png', '125-175.png' ];
 
   constructor(
     public navCtrl: NavController,
@@ -25,15 +26,12 @@ export class MarketPage {
     public usersDataProvider: UsersDataProvider,
     public userDataProvider: UserDataProvider
   ) {
-    this.usersList = this.usersDataProvider.getUser();
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarketPage');
   }
 
-  logout() {
-    this.userDataProvider.logout();
-  }
 
 }
