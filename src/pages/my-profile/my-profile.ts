@@ -22,4 +22,8 @@ export class MyProfilePage {
     console.log('ionViewDidLoad MyProfilePage');
   }
 
+  openCamera(){
+  	alert("TestCam");
+  }
+
 }
