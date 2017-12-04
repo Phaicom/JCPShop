@@ -26,8 +26,8 @@ export class MyProfilePage {
     console.log('ionViewDidLoad MyProfilePage');
   }
 
-  openSearch() {
-    this.events.publish('open:search');
+  openCamera(){
+  	alert("TestCam");
   }
 
 }
