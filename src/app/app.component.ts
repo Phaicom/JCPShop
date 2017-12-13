@@ -38,21 +38,21 @@ export class MyApp {
 
   listenToLoginEvents() {
     this.events.subscribe('user:login', () => {
-      this.openPage(TABS_PAGE)
+      this.openPage(TABS_PAGE);
     });
 
     this.events.subscribe('user:logout', () => {
-      this.openPage(LOGIN_PAGE)
+      this.openPage(LOGIN_PAGE);
     });
   }
 
   listenToSearchEvents() {
     this.events.subscribe('open:search', () => {
-      this.openPage(SEARCH_PAGE)
+      this.openPage(SEARCH_PAGE);
     });
 
     this.events.subscribe('close:search', () => {
-      this.openPage(TABS_PAGE)
+      this.openPage(TABS_PAGE);
     });
   }
 

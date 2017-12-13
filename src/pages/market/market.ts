@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsersDataProvider, UserDataProvider } from "../../providers/providers";
 import { Observable } from 'rxjs/Observable';
@@ -19,24 +20,25 @@ import { SEARCH_PAGE } from "../pages.constants";
 })
 export class MarketPage {
 
-  images = [ '100-100.png', '125-100.png', '125-125.png', '125-175.png' ];
+  images = ['100-100.png', '125-100.png', '125-125.png', '125-175.png'];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public events: Events,
     public usersDataProvider: UsersDataProvider,
-    public userDataProvider: UserDataProvider
+    public userDataProvider: UserDataProvider,
+    private storage: Storage
   ) {
-    
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MarketPage');
   }
 
-
   openSearch() {
+    this.storage.set('before:search', 1);
     this.events.publish('open:search');
   }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SEARCH_PAGE } from "../pages.constants";
 
@@ -19,7 +20,8 @@ export class FollowingPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public events: Events
+    public events: Events,
+    private storage: Storage
   ) {
   }
 
@@ -28,6 +30,7 @@ export class FollowingPage {
   }
 
   openSearch() {
+    this.storage.set('before:search', 0);
     this.events.publish('open:search');
   }
 
