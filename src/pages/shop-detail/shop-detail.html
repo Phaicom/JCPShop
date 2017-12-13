@@ -13,123 +13,123 @@
 </ion-header>
 
 
-<ion-content parallax-header style="background-color: #ececec;">
- 
-  <div class="header-image" style="background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950);" (click)="showPhotoViewer('https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950')">
+<ion-content style="background-color: #ececec;">
 
-    <div class="backgroundShopDetail" align="center">
-      <img src="100-100.png" class="picture" align="center" (click)="showPhotoViewer('https://devdactic.com/wp-content/uploads/2017/04/ionic-image-gallery-header-720x400.png')"/>
-      <button ion-button color="red" id="btnFollow">Follow</button>
-      <div>
-        <span>Shop name &nbsp;<ion-icon name="mail"></ion-icon></span>
-      </div>
-      <div>
-        <span><b>4</b> &nbsp;Followers</span>
-      </div>
-      <div align="left">
-        <span>Verified Shop: &nbsp;</span>
-      </div>
-      <ion-grid no-padding align="left">
-        <ion-row>
-          <ion-col col-12><p>shop detail</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+  <div style="height: 100px; background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950);" (click)="showPhotoViewer('https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950')">
+
+  </div>
+  <div align="center" style="margin-top: -5px;background-color:white;">
+    <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/25182076_1799906193377194_1265009072374340417_o.jpg?oh=a93899189cbaa84f214e016590b361fb&oe=5AC153CF" class="picture" align="center" (click)="showPhotoViewer('https://devdactic.com/wp-content/uploads/2017/04/ionic-image-gallery-header-720x400.png')"/>
+    <button ion-button color="red" id="btnFollow">Follow</button>
+    <div>
+      <span>Shop name &nbsp;<ion-icon name="mail"></ion-icon></span>
     </div>
+    <div>
+      <span><b>4</b> &nbsp;Followers</span>
+    </div>
+    <ion-grid padding align="left">
+      <ion-row>
+        <ion-col col-12><p>shop detail</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 
-  <div class="main-content">
-    
-    <ion-header>
-      <ion-navbar>
-        <div>
-          <ion-segment [(ngModel)]="tabShopDetail">
-            <ion-segment-button value="sellingList">
-              SELLING LIST
-            </ion-segment-button>
-            <ion-segment-button value="shopInfo">
-              SHOP INFO
-            </ion-segment-button>
-          </ion-segment>
-        </div>
 
-        <div [ngSwitch]="tabShopDetail">
-          <ion-list *ngSwitchCase="'sellingList'">
-            <ion-item>
-              <ion-grid no-padding>
-                <ion-row>
-                  <ion-col col-6 no-padding>
-                    <ion-card>
-                      <img src="125-125.png">
-                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                      <b>500 THB</b>
-                      <div>
-                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
-                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
-                      </div>
-                    </ion-card>
-                  </ion-col>
-                  <ion-col col-6 no-padding>
-                    <ion-card>
-                      <img src="125-125.png">
-                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                      <b>500 THB</b>
-                      <div>
-                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
-                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
-                      </div>
-                    </ion-card>
-                  </ion-col>
-                  <ion-col col-6 no-padding>
-                    <ion-card>
-                      <img src="125-125.png">
-                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                      <b>500 THB</b>
-                      <div>
-                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
-                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
-                      </div>
-                    </ion-card>
-                  </ion-col>
-                  <ion-col col-6 no-padding>
-                    <ion-card>
-                      <img src="125-125.png">
-                      <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                      <b>500 THB</b>
-                      <div>
-                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
-                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
-                      </div>
-                    </ion-card>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-item>
-          </ion-list>
 
-          <ion-list *ngSwitchCase="'shopInfo'">
-            <ion-item no-padding>
-              <button ion-item>
-                <ion-card>
-                <ion-grid>
-                  <ion-row>
-                    <ion-col col-6 align="left">
-                        <p>Shop Owner</p>
-                        <p>dummy name</p>
-                    </ion-col>
-                    <ion-col col-6 align="right">
-                        <img src="https://pixy.org/src/476/4764586.png" style="width: 30px; height: 30px; margin-right: 10px;" align="right">
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
+  <div>
+    <ion-segment [(ngModel)]="tabShopDetail">
+      <ion-segment-button value="sellingList">
+        SELLING LIST
+      </ion-segment-button>
+      <ion-segment-button value="shopInfo">
+        SHOP INFO
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="tabShopDetail">
+    <ion-list *ngSwitchCase="'sellingList'">
+      <ion-item>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-6 no-padding>
+              <ion-card>
+                <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/22549561_1444168808966415_2395915348159413637_n.jpg?oh=72030071611fd3b12ede3a38b58eba47&oe=5ABF7374">
+                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                <b>500 THB</b>
+                <div *ngIf="!saveStatus" (click)="save()">
+                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                </div>
+                <div *ngIf="saveStatus" (click)="save()">
+                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                </div>
               </ion-card>
-              </button> 
-            </ion-item>
-          </ion-list>
-        </div>
-      </ion-navbar>
-    </ion-header>
- 
+            </ion-col>
+            <ion-col col-6 no-padding>
+              <ion-card>
+                <img src="125-125.png">
+                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                <b>500 THB</b>
+                <div *ngIf="!saveStatus" (click)="save()">
+                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                </div>
+                <div *ngIf="saveStatus" (click)="save()">
+                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                </div>
+              </ion-card>
+            </ion-col>
+            <ion-col col-6 no-padding>
+              <ion-card>
+                <img src="125-125.png">
+                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                <b>500 THB</b>
+                <div *ngIf="!saveStatus" (click)="save()">
+                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                </div>
+                <div *ngIf="saveStatus" (click)="save()">
+                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                </div>
+              </ion-card>
+            </ion-col>
+            <ion-col col-6 no-padding>
+              <ion-card>
+                <img src="125-125.png">
+                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                <b>500 THB</b>
+                <div *ngIf="!saveStatus" (click)="save()">
+                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                </div>
+                <div *ngIf="saveStatus" (click)="save()">
+                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                </div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'shopInfo'">
+      <ion-item no-padding>
+        <button ion-item>
+          <ion-card>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-6 align="left">
+                  <p>Shop Owner</p>
+                  <p>dummy name</p>
+                </ion-col>
+                <ion-col col-6 align="right">
+                  <img src="https://pixy.org/src/476/4764586.png" style="width: 30px; height: 30px; margin-right: 10px;" align="right">
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </button> 
+      </ion-item>
+    </ion-list>
   </div>
- 
+
+
 </ion-content>

@@ -1,0 +1,58 @@
+page-market-detail {
+	ion-slides {
+		height: 308px;
+	}
+
+	img {
+		position: absolute;
+	    margin: auto; 
+	    min-height: 100%;
+	    min-width: 100%;
+
+	    /* For the following settings we set 100%, but it can be higher if needed 
+	    See the answer's update */
+	    left: -100%;
+	    right: -100%;
+	    top: -100%;
+	    bottom: -100%;
+	}
+
+	.add {
+		background-color: red;
+		width: 100%;
+	}
+
+	.countState {
+		padding-top: 10px;
+	}
+
+	.save {
+		width: 100px;
+		height: 25px;
+		background-color: rgba(0,0,0,0);
+	}
+
+	#footer {
+		position: fixed;
+		bottom: 1px;
+	}
+
+	#picture {
+		width: 30px;
+		height: 30px;
+	}
+
+	.mini {
+	  height: 11vw;
+	  width: 11vw;
+	  display: inline-block;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	ion-col {
+		b {
+			font-size: 8pt;
+		}
+	}
+}

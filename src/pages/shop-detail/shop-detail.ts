@@ -15,6 +15,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
   templateUrl: 'shop-detail.html',
 })
 export class ShopDetailPage {
+
+  saveStatus:boolean = false;
   tabShopDetail: string = "sellingList";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private photoViewer: PhotoViewer) {
@@ -26,6 +28,14 @@ export class ShopDetailPage {
 
   showPhotoViewer(src:string) {
   	this.photoViewer.show(src);
+  }
+
+  save() {
+    if (this.saveStatus == false) {
+      this.saveStatus = true;
+    } else {
+      this.saveStatus = false;
+    }
   }
 
 }

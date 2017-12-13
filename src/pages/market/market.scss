@@ -1,3 +1,68 @@
 page-market {
+	.inner {
+		width: 430px;
+		height: 100%;
+		padding: 10px;
+		p {
+			margin: 5px;
+		}
+		div {
+			padding: 5px;
+			display: table-cell;
+		}
+	}
 
+	.women {
+	  height: 20vw;
+	  width: 40vw;
+	  color: white;
+	  background-image: url('http://www.joebuy.com/bmz_cache/0/0fed44466f0786bfe75d51b21bd94292.image.128x128.jpg');
+	  display: inline-block;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	.men {
+	  height: 20vw;
+	  width: 40vw;
+	  color: white;
+	  background-image: url('https://i.pinimg.com/originals/8c/94/3f/8c943f2cceea51e7ba4f6b4289a0b54a.jpg');
+	  display: inline-block;
+	}
+
+	.lifestyle {
+	  height: 20vw;
+	  width: 40vw;
+	  color: white;
+	  background-image: url('https://tshop.r10s.jp/auc-barzaz/cabinet/new/ss-3015_1.jpg?fitin=128:128');
+	  display: inline-block;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	ion-scroll {
+		margin-top: 0px;
+		width: 100%; 
+		height: 110px;
+	}
+
+	ion-slides {
+		height: 140px;
+	}
+
+	.button-md {
+		height: 25px;
+		width: 125px;
+	}
+
+	ion-card {
+		padding: 5px;
+	}
+
+	.ellipsis {
+	  	overflow: hidden;
+	  	max-height: 20px;
+	  	text-overflow: ellipsis;
+	  
+	}
 }

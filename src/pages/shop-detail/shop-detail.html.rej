@@ -1,0 +1,11 @@
+diff a/src/pages/shop-detail/shop-detail.html b/src/pages/shop-detail/shop-detail.html	(rejected hunks)
+@@ -96,8 +96,7 @@
+                       <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
+                       <b>500 THB</b>
+                       <div>
+-                        <button ion-button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
+-                        <ion-icon name="heart"></ion-icon><ion-icon name="heart"></ion-icon>
++                        <button color="light"><ion-icon name="heart"></ion-icon> &nbsp;Save</button>
+                       </div>
+                     </ion-card>
+                   </ion-col>

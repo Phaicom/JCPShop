@@ -1,0 +1,135 @@
+<!--
+  Generated template for the MarketDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>market-detail</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentModal()">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+	<ion-card no-padding no-margin style="width: 100%;">
+	  <ion-card-header no-padding no-margin>
+	    <div>
+			<ion-slides class="image-slider" pager>
+				<ion-slide *ngFor="let img of images">
+					<img src="{{img}}" class="thumb-img">
+				</ion-slide>
+			</ion-slides>
+		</div>
+		<ion-grid>
+		  <ion-row>
+		    <ion-col col-7 align="left" class="countState">
+		    	<ion-icon name="eye"></ion-icon> &nbsp; 12345 &nbsp; <ion-icon name="heart-outline"></ion-icon> &nbsp; 1
+		    </ion-col>
+		    <ion-col col-5 align="right"><button ion-button class="save" color="light"><ion-icon name="heart-outline"></ion-icon> &nbsp; Save</button></ion-col>
+		  </ion-row>
+		  <ion-row>
+		  	<ion-col col-12>
+		  		<b>Product name</b>
+		  	</ion-col>
+		  	<ion-col col-12>
+		  		<b>Price</b>
+		  	</ion-col>
+		  </ion-row>
+		</ion-grid>
+	  </ion-card-header>
+	
+	</ion-card>
+	
+	<ion-card no-padding no-margin style="width: 100%;">
+	  <ion-card-content>
+	    <p>Description</p>
+	  </ion-card-content>		
+	</ion-card>
+
+	<ion-card no-padding no-margin style="width: 100%;margin-top: 10px;margin-bottom: 10px;">
+	  	<ion-grid>	
+			  <ion-row>
+			    <ion-col col-2 align="left"><img class="mini" src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14351999_1199453586757308_2142988214076800661_o.jpg?oh=78f173fc0c33025d81641d4bcf479c78&oe=5AC1F219"/></ion-col>
+			    <ion-col col-3 style="padding-left: 5px;"><b>Shop name</b><br><b style="font-size: 6pt;color: green;">Verified</b></ion-col>
+			    <ion-col col-7 align="right">
+			    	<button ion-button align="right" style="color: #007aff;background-color: rgba(0,0,0,0);width: 36px;height: 25px;">
+			    		<ion-icon name="text"></ion-icon>
+			    	</button> &nbsp;
+	    			<button ion-button style="background-color: #007aff; height: 25px; font-size: 8pt;">Follow</button>
+	    		</ion-col>
+			  </ion-row>
+			</ion-grid>	
+	</ion-card>
+
+	<ion-card no-padding no-margin style="width: 100%;">
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-col col-5>Category</ion-col>
+	    		<ion-col col-7>dummy</ion-col>
+	    	</ion-row>
+	    </ion-grid>		
+	</ion-card>
+	<ion-card no-padding no-margin style="width: 100%;">
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-col col-5>In Stock</ion-col>
+	    		<ion-col col-7>dummy</ion-col>
+	    	</ion-row>
+	    </ion-grid>		
+	</ion-card>
+	<ion-card no-padding no-margin style="width: 100%;margin-top: 10px;">
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-col col-5>Raady to ship in</ion-col>
+	    		<ion-col col-7>dummy</ion-col>
+	    	</ion-row>
+	    </ion-grid>		
+	</ion-card>
+	<ion-card no-padding no-margin style="width: 100%;">
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-col col-5>Logistic</ion-col>
+	    		<ion-col col-7>dummy</ion-col>
+	    	</ion-row>
+	    </ion-grid>		
+	</ion-card>
+	<ion-card no-padding no-margin style="width: 100%;">
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-col col-5>Payment</ion-col>
+	    		<ion-col col-7>dummy</ion-col>
+	    	</ion-row>
+	    </ion-grid>		
+	</ion-card>
+
+	<ion-card no-margin style="width: 100%;margin-top: 10px;margin-bottom: 10px;">
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-item detail-push>
+	    			<ion-icon name="create"></ion-icon> &nbsp;View comment
+	    		</ion-item>
+	    	</ion-row>
+	    	<ion-row>
+	    		<ion-col col-12>
+	    			<input type="text" style="width: 100%;" />
+	    		</ion-col>
+	    	</ion-row>
+	    </ion-grid>		
+	</ion-card>
+		
+	<div style="height: 60px;"></div>
+
+	<ion-footer position="bottom" bottom>
+		<ion-toolbar position="bottom" id="footer">
+			<button ion-button class="add" tabsPlacement="bottom" end>Add to Cart</button>
+		</ion-toolbar>
+	</ion-footer>
+</ion-content>

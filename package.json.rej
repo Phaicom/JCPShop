@@ -1,0 +1,13 @@
+diff a/package.json b/package.json	(rejected hunks)
+@@ -40,10 +40,9 @@
+     "cordova-plugin-splashscreen": "^4.1.0",
+     "cordova-plugin-whitelist": "^1.3.3",
+     "firebase": "^4.6.2",
++    "ionic": "^3.19.0",
+     "ionic-angular": "^3.9.1-201711081842",
+     "ionic-img-viewer": "^2.9.0",
+-    "ionic": "^3.19.0",
+-    "ionic-angular": "3.9.2",
+     "ionic-plugin-keyboard": "^2.2.1",
+     "ionicons": "3.0.0",
+     "promise-polyfill": "^6.1.0",
