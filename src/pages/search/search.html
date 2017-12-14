@@ -12,7 +12,7 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-searchbar [placeholder]="'Search for '+searchType+'s'"></ion-searchbar>
+    <ion-searchbar [placeholder]="'Search for '+searchType+'s'" (ionInput)="onSearchInput($event)"></ion-searchbar>
   </ion-navbar>
 
 </ion-header>
@@ -29,4 +29,18 @@
       </ion-segment-button>
     </ion-segment>
   </div>
+
+  <!-- items -->
+  <ion-list inset *ngIf="searchType==='item'">
+    <ion-item *ngFor="let item of items | async">
+      {{item.name}}
+    </ion-item>
+  </ion-list>
+
+  <!-- markets -->
+  <ion-list inset *ngIf="searchType==='shop'">
+    <ion-item *ngFor="let market of markets | async">
+      {{market.name}}
+    </ion-item>
+  </ion-list>
 </ion-content>
