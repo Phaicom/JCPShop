@@ -58,15 +58,15 @@ export class MarketPage {
     let createTime: Date = new Date();
     this.market = {
       id: '',
-      name: 'Peter Sneaker',
-      email: 'peter@peter.com',
-      phoneNumber: '0812345678',
-      photoProfileURL: 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/23471922_1466938716689424_6171403569327958054_n.jpg?oh=4fa0b540bae022c04a2054ca6fc7aec9&oe=5ACE5FAD',
-      photoCoverURL: 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/24799511_1488122064571089_8968755720877895570_o.jpg?oh=f7212133364a717d93a13992ef2f62d3&oe=5A88FA0E',
-      description: 'จำหน่ายรองเท้าแบรนด์เนม limited edition สนใจรุ่นไหน แบรนด์อะไร สอบถามเข้ามาได้เลยครับ',
+      name: 'Pronto Denim',
+      email: 'pronto@pronto.com',
+      phoneNumber: '087456321',
+      photoProfileURL: 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/23319208_10155817461657442_6165476283888494484_n.png?oh=8c6315b5524d7091925e9d9518c90cca&oe=5AB71E6A',
+      photoCoverURL: 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/25395857_10155923206562442_1500558107066331547_n.jpg?oh=a426f77e67c41582fd89bd1c19e1d506&oe=5ACC5F7E',
+      description: 'Bangkok\'s multi-brand stores bringing the best denim, tops, footwear and accessories from designers around the globe who craft them with pure passion.',
       follow: 0,
       date: createTime.toISOString(),
-      mid: 'MA6012001'
+      mid: 'MA6012004'
     }
 
     console.log('market', this.market);

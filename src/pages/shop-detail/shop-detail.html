@@ -15,8 +15,9 @@
 
 <ion-content style="background-color: #ececec;">
 
-  <div style="height: 100px; background-image: url({{shopDetail.photoCoverURL}});" (click)="showPhotoViewer(shopDetail.photoProfileURL)">
-
+  <!-- <div style="height: 100px; background-image: url({{shopDetail.photoCoverURL}});" (click)="showPhotoViewer(shopDetail.photoProfileURL)"> -->
+  <div>
+    <img src="{{shopDetail.photoCoverURL}}" (click)="showPhotoViewer(shopDetail.photoProfileURL)" style="height: 150px;width: 100%;">
   </div>
   <div align="center" style="margin-top: -5px;background-color:white;">
     <img src="{{shopDetail.photoProfileURL}}" class="picture" align="center" (click)="showPhotoViewer(shopDetail.photoProfileURL)"/>
