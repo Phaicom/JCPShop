@@ -25,6 +25,14 @@
 
 
 <ion-content>
+  <!-- region mockup -->
+  <button ion-button block (click)="addMarket()">add market</button>
+  <ion-list inset>
+    <ion-item *ngFor="let market of marketData | async">
+      {{market.name}}
+    </ion-item>
+  </ion-list>
+  <!-- end region -->
   <div>
     <ion-slides class="image-slider" autoplay="4000" loop="true" pager>
       <ion-slide *ngFor="let img of images">
@@ -70,10 +78,12 @@
               <p class="ellipsis">sdfasdfasdfasdfsdafsdfddddddddddd</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -86,14 +96,17 @@
         <ion-row>
           <ion-col col-6 no-padding>
             <ion-card>
-              <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/22549561_1444168808966415_2395915348159413637_n.jpg?oh=72030071611fd3b12ede3a38b58eba47&oe=5ABF7374" (click)="marketDetail()">
+              <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/22549561_1444168808966415_2395915348159413637_n.jpg?oh=72030071611fd3b12ede3a38b58eba47&oe=5ABF7374"
+                (click)="marketDetail()">
               <p class="ellipsis">qwerrtyrtiyouiopoiupoiqweropiwr</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -103,10 +116,12 @@
               <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -116,10 +131,12 @@
               <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -129,10 +146,12 @@
               <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -149,10 +168,12 @@
               <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -162,10 +183,12 @@
               <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
               <b>500 THB</b>
               <div *ngIf="!saveStatus" (click)="save()">
-                <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
+                <button ion-button color="light">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Save</button>
               </div>
               <div *ngIf="saveStatus" (click)="save()">
-                <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
+                <button ion-button color="light" style="background-color: red;color:white;">
+                  <ion-icon name="heart-outline"></ion-icon> &nbsp;Saved</button>
               </div>
             </ion-card>
           </ion-col>
@@ -177,7 +200,7 @@
   <!--<ion-list>
     <button ion-item *ngFor="let item of marketData">
       {{ item }}
-    </button>  
+    </button>
   </ion-list>-->
-  
+
 </ion-content>
