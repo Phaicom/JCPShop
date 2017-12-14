@@ -26,18 +26,10 @@
 			</ion-grid>
 		</ion-card>
 		<ion-grid>
-			<ion-row>
-				<ion-col col-4>
-				    <img src="125-125.png">
-				    <p align="center">Brand</p>
-				</ion-col>
-				<ion-col col-4>
-				    <img src="125-125.png">
-				    <p align="center">Brand</p>
-				</ion-col>
-				<ion-col col-4>
-				    <img src="125-125.png">
-				    <p align="center">Brand</p>
+			<ion-row >
+				<ion-col col-4 *ngFor="let brand of brandData | async">
+				    <img src="{{brand.photoProfileURL}}" (click)="shopDetail(brand)">
+				    <p align="center">{{brand.name}}</p>
 				</ion-col>
 			</ion-row>
 		</ion-grid>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MarketDataProvider, ReviewDataProvider } from "../../providers/providers";
+import { Market } from "../../models/market";
+import { Observable } from 'rxjs/Observable';
+import { SHOP_DETAIL_PAGE } from '../pages.constants';
 /**
  * Generated class for the AllBrandPage page.
  *
@@ -14,12 +17,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'all-brand.html',
 })
 export class AllBrandPage {
+  
+  brandData:Observable<Market[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public marketDataProvider: MarketDataProvider) {
+  	this.brandData = this.marketDataProvider.getMarket();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AllBrandPage');
   }
 
+  shopDetail(shopDetail:Market) {
+    this.navCtrl.push(SHOP_DETAIL_PAGE, { 'shopDetail': shopDetail });
+  }
 }

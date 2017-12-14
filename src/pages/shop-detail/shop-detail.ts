@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { Market } from "../../models/market";
+import { Observable } from 'rxjs/Observable';
+import { MarketDataProvider, ItemDataProvider } from "../../providers/providers";
+import { Item } from "../../models/item";
 
 /**
  * Generated class for the ShopDetailPage page.
@@ -20,9 +23,22 @@ export class ShopDetailPage {
   saveStatus:boolean = false;
   tabShopDetail: string = "sellingList";
   shopDetail:Market;
+  items:Observable<Item[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private photoViewer: PhotoViewer) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private photoViewer: PhotoViewer,
+              public itemDataProvider: ItemDataProvider,
+              public marketDataProvider: MarketDataProvider) {
     this.shopDetail = this.navParams.get('shopDetail');
+    this.items = this.itemDataProvider.getItem();
+    this.items = this.items.map(item => {
+      return item.filter(data => {
+        if (this.shopDetail.mid == data.mid) {
+          return data;
+        }
+      })
+    });
     console.log(this.shopDetail);
   }
 

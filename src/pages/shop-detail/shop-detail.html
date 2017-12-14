@@ -17,7 +17,7 @@
 
   <!-- <div style="height: 100px; background-image: url({{shopDetail.photoCoverURL}});" (click)="showPhotoViewer(shopDetail.photoProfileURL)"> -->
   <div>
-    <img src="{{shopDetail.photoCoverURL}}" (click)="showPhotoViewer(shopDetail.photoProfileURL)" style="height: 150px;width: 100%;">
+    <img src="{{shopDetail.photoCoverURL}}" (click)="showPhotoViewer(shopDetail.photoCoverURL)" style="height: 150px;width: 100%;">
   </div>
   <div align="center" style="margin-top: -5px;background-color:white;">
     <img src="{{shopDetail.photoProfileURL}}" class="picture" align="center" (click)="showPhotoViewer(shopDetail.photoProfileURL)"/>
@@ -54,50 +54,11 @@
       <ion-item>
         <ion-grid no-padding>
           <ion-row>
-            <ion-col col-6 no-padding>
+            <ion-col col-6 no-padding *ngFor="let item of items | async">
               <ion-card>
-                <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/22549561_1444168808966415_2395915348159413637_n.jpg?oh=72030071611fd3b12ede3a38b58eba47&oe=5ABF7374">
-                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                <b>500 THB</b>
-                <div *ngIf="!saveStatus" (click)="save()">
-                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
-                </div>
-                <div *ngIf="saveStatus" (click)="save()">
-                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
-                </div>
-              </ion-card>
-            </ion-col>
-            <ion-col col-6 no-padding>
-              <ion-card>
-                <img src="125-125.png">
-                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                <b>500 THB</b>
-                <div *ngIf="!saveStatus" (click)="save()">
-                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
-                </div>
-                <div *ngIf="saveStatus" (click)="save()">
-                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
-                </div>
-              </ion-card>
-            </ion-col>
-            <ion-col col-6 no-padding>
-              <ion-card>
-                <img src="125-125.png">
-                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                <b>500 THB</b>
-                <div *ngIf="!saveStatus" (click)="save()">
-                  <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
-                </div>
-                <div *ngIf="saveStatus" (click)="save()">
-                  <button ion-button color="light" style="background-color: red;color:white;"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Saved</button>
-                </div>
-              </ion-card>
-            </ion-col>
-            <ion-col col-6 no-padding>
-              <ion-card>
-                <img src="125-125.png">
-                <p class="ellipsis">sdfasdfasdfasdfsdafsdf</p>
-                <b>500 THB</b>
+                <img src="{{item.photos[0]}}">
+                <p class="ellipsis">{{item.name}}</p>
+                <b>{{item.amount}} THB</b>
                 <div *ngIf="!saveStatus" (click)="save()">
                   <button ion-button color="light"><ion-icon name="heart-outline" ></ion-icon> &nbsp;Save</button>
                 </div>
