@@ -2,8 +2,9 @@ export class Market {
   id: string; // fireStore id use to delete and update
   name: string;
   email: string;
-  phoneNumber: number;
-  photoURL: string;
+  phoneNumber: string;
+  photoProfileURL: string;
+  photoCoverURL: string;
   description: string;
   date: string; // opening date
   mid: string;

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { MODAL_PAGE } from '../pages.constants';
 
+
 /**
  * Generated class for the MarketDetailPage page.
  *
@@ -22,7 +23,9 @@ export class MarketDetailPage {
              'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/13522775_1042965985739403_3268806380087284009_o.jpg?oh=25f6db84d173c2c77136f662e825a47d&oe=5AD468F7' ];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -33,5 +36,7 @@ export class MarketDetailPage {
     let modal = this.modalCtrl.create(MODAL_PAGE);
     modal.present();
   }
+
+
 
 }

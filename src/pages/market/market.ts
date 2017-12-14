@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
-import { UsersDataProvider, UserDataProvider } from "../../providers/providers";
+import { UsersDataProvider, UserDataProvider, MarketDataProvider } from "../../providers/providers";
 import { User } from "../../models/user";
+import { Market } from "../../models/market";
 import { SEARCH_PAGE, MARKET_DETAIL_PAGE } from "../pages.constants";
+
 
 /**
  * Generated class for the MarketPage page.
@@ -19,9 +21,10 @@ import { SEARCH_PAGE, MARKET_DETAIL_PAGE } from "../pages.constants";
 })
 export class MarketPage {
 
-
+  market:any;
   saveStatus:boolean = false;
   marketType:string = "editor";
+  marketData:any;
 
   images = [ 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14351999_1199453586757308_2142988214076800661_o.jpg?oh=78f173fc0c33025d81641d4bcf479c78&oe=5AC1F219', 
              'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14258109_1181056208597046_1010626863625118272_o.jpg?oh=0b08a7f8b84b48a46ce78e542d54ac0b&oe=5A9168FB', 
@@ -34,9 +37,34 @@ export class MarketPage {
     public events: Events,
     public usersDataProvider: UsersDataProvider,
     public userDataProvider: UserDataProvider,
+    public marketDataProvider: MarketDataProvider,
     private storage: Storage
   ) {
+    
+    //this.addData();
+    this.marketData = marketDataProvider.getMarket();
 
+    
+
+    
+
+    this.marketData.forEach(function(element) {
+      console.log(element.name);
+    });
+  }
+
+  addData() {
+    let createTime: Date = new Date();
+    this.market.id = '6012001';
+    this.market.name = "Peter Sneaker";
+    this.market.email = "peter@peter.com";
+    this.market.phoneNumber = "0812345678";
+    this.market.photoProfileURL = "https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/23471922_1466938716689424_6171403569327958054_n.jpg?oh=4fa0b540bae022c04a2054ca6fc7aec9&oe=5ACE5FAD";
+    this.market.photoCoverURL = "https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/24799511_1488122064571089_8968755720877895570_o.jpg?oh=f7212133364a717d93a13992ef2f62d3&oe=5A88FA0E";
+    this.market.description = "จำหน่ายรองเท้าแบรนด์เนม limited edition สนใจรุ่นไหน แบรนด์อะไร สอบถามเข้ามาได้เลยครับ";
+    this.market.date = createTime.toISOString();
+    this.market.mid = "MA6012001";
+    this.marketDataProvider.addMarket(this.market);
   }
 
   ionViewDidLoad() {

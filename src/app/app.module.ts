@@ -17,6 +17,7 @@ import { OrderDataProvider } from '../providers/order-data/order-data';
 import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",
@@ -55,7 +56,8 @@ export const firebaseConfig = {
     UsersDataProvider,
     ItemDataProvider,
     OrderDataProvider,
-    PhotoViewer
+    PhotoViewer,
+    SocialSharing
   ]
 })
 export class AppModule { }
