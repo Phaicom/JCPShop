@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { Events,IonicPage, NavController, NavParams } from 'ionic-angular';
+import { REVIEW_DETAIL_PAGE, SHOP_DETAIL_PAGE, STYLE_DETAIL_PAGE, ALL_BRAND_PAGE, ALL_REVIEW_PAGE, ALL_STYLE_PAGE } from '../pages.constants';
+
 
 /**
  * Generated class for the BrowsePage page.
@@ -15,11 +18,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BrowsePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public events: Events) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BrowsePage');
   }
 
+  reviewDetail() {
+  	this.navCtrl.push(REVIEW_DETAIL_PAGE);
+
+  }
+
+  shopDetail() {
+    this.navCtrl.push(SHOP_DETAIL_PAGE);
+  }
+
+  styleDetail() {
+    this.navCtrl.push(STYLE_DETAIL_PAGE);
+  }
+
+  allBrand() {
+    this.navCtrl.push(ALL_BRAND_PAGE);
+  }
+
+  allReview() {
+    this.navCtrl.push(ALL_REVIEW_PAGE);
+  }
+
+  allStyle() {
+    this.navCtrl.push(ALL_STYLE_PAGE);
+  }
+
+  openSearch() {
+    this.events.publish('open:search');
+  }
 }

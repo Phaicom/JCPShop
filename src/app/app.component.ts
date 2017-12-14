@@ -4,8 +4,7 @@ import { Storage } from '@ionic/storage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TabsPage } from '../pages/tabs/tabs';
-import { LOGIN_PAGE } from '../pages/pages.constants';
+import { LOGIN_PAGE, TABS_PAGE, SEARCH_PAGE } from '../pages/pages.constants';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,6 +23,7 @@ export class MyApp {
     this.initializeApp();
     this.rootPage = LOGIN_PAGE;
     this.listenToLoginEvents();
+    this.listenToSearchEvents();
   }
 
 
@@ -38,11 +38,21 @@ export class MyApp {
 
   listenToLoginEvents() {
     this.events.subscribe('user:login', () => {
-      this.openPage(TabsPage)
+      this.openPage(TABS_PAGE)
     });
 
     this.events.subscribe('user:logout', () => {
       this.openPage(LOGIN_PAGE)
+    });
+  }
+
+  listenToSearchEvents() {
+    this.events.subscribe('open:search', () => {
+      this.openPage(SEARCH_PAGE)
+    });
+
+    this.events.subscribe('close:search', () => {
+      this.openPage(TABS_PAGE)
     });
   }
 

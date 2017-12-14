@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SEARCH_PAGE } from "../pages.constants";
 
 /**
  * Generated class for the FollowingPage page.
@@ -15,11 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FollowingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public events: Events
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FollowingPage');
+  }
+
+  openSearch() {
+    this.events.publish('open:search');
   }
 
 }

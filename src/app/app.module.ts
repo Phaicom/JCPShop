@@ -10,8 +10,13 @@ import { Facebook } from '@ionic-native/facebook';
 import { IonicStorageModule } from "@ionic/storage";
 
 import { MyApp } from './app.component';
-import { TabsPage } from '../pages/tabs/tabs';
 import { MarketDataProvider, UserDataProvider } from "../providers/providers";
+import { UsersDataProvider } from '../providers/users-data/users-data';
+import { ItemDataProvider } from '../providers/item-data/item-data';
+import { OrderDataProvider } from '../providers/order-data/order-data';
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",
@@ -25,7 +30,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    TabsPage
+    ParallaxHeaderDirective
   ],
   imports: [
     BrowserModule,
@@ -33,12 +38,12 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    IonicImageViewerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    TabsPage
+    MyApp
   ],
   providers: [
     StatusBar,
@@ -46,7 +51,11 @@ export const firebaseConfig = {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     MarketDataProvider,
     UserDataProvider,
-    Facebook
+    Facebook,
+    UsersDataProvider,
+    ItemDataProvider,
+    OrderDataProvider,
+    PhotoViewer
   ]
 })
 export class AppModule { }

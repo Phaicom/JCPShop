@@ -1,3 +1,30 @@
 page-browse {
+	.inner {
+		width: 1200px;
+		height: 100%;
+		padding: 10px;
+		p {
+			margin: 5px;
+		}
+		div {
+			padding: 5px;
+			display: table-cell;
+		}
+	}
 
+	.redColor {
+		color: red;
+	}
+
+	.nextHeader {
+		margin-top: 40px;
+	}
+
+	.ellipsis {
+		padding: 5px;
+	  	overflow: hidden;
+	  	max-height: 42px;
+	  	text-overflow: ellipsis;
+	  
+	}
 }
