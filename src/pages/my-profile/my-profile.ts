@@ -3,6 +3,10 @@ import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SEARCH_PAGE } from "../pages.constants";
 import { Edit_UserPage } from "../pages.constants";
+import { UserDataProvider } from "../../providers/user-data/user-data";
+import { User } from "../../models/user";
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the MyProfilePage page.
@@ -18,12 +22,18 @@ import { Edit_UserPage } from "../pages.constants";
 })
 export class MyProfilePage {
 
+  user : User;
+  userList: Observable<User[]>;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public events: Events,
-    private storage: Storage
+    private storage: Storage,
+    public userData: UserDataProvider
   ) {
+    this.userList = userData.getUserData();
+    this.user = userData.getUser();
   }
 
   ionViewDidLoad() {
@@ -38,18 +48,9 @@ export class MyProfilePage {
     this.events.publish('open:search');
   }
 
-
- 
-
-  openCamera(){
+  editProfile(){
   	this.navCtrl.push(Edit_UserPage);
+    
   }
-
-  
-
-  openCamera() {
-    alert("TestCam");
-  }
-
 
 }

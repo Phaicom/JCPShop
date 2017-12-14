@@ -11,16 +11,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-	<ion-item (click)="pickDate">
-	PICK A DATE
-	<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="phone.createDate" name="date" required="" block></ion-datetime>
-</ion-item>
-<ion-item (click)="pickDate">
-	PICK A DATE
-	<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="phone.createDate" name="date" required="" block></ion-datetime>
-</ion-item>
-<ion-item (click)="pickDate">
-	PICK A DATE
-	<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="phone.createDate" name="date" required="" block></ion-datetime>
-</ion-item>
+	<ion-input type = "text" placeholder="Title" [(ngModel)]="user.displayName" name="title" requried=""></ion-input>
+	<ion-input type = "text" placeholder="Title" [(ngModel)]="user.email" name="title" requried=""></ion-input>
+	<button (click)="updateData()">SAVE</button>
 </ion-content>

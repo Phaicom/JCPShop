@@ -8,6 +8,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { User } from "../../models/user";
 import { UsersDataProvider } from "../users-data/users-data";
+import { Observable } from 'rxjs/Observable';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 
 /*
   Generated class for the UserDataProvider provider.
@@ -17,7 +19,10 @@ import { UsersDataProvider } from "../users-data/users-data";
 */
 @Injectable()
 export class UserDataProvider {
+
   HAS_LOGGED_IN = 'hasLoggedIn';
+  userListRef: AngularFirestoreCollection<User>;
+  user: User;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -26,7 +31,8 @@ export class UserDataProvider {
     public events: Events,
     public storage: Storage,
     public splashScreen: SplashScreen,
-    public usersDataProvider: UsersDataProvider
+    public usersDataProvider: UsersDataProvider,
+    public fireStore: AngularFirestore
   ) {
     afAuth.authState.subscribe((user: firebase.User) => {
       console.log(user);
@@ -66,6 +72,11 @@ export class UserDataProvider {
       this.events.publish('user:login');
       this.splashScreen.hide();
     });
+
+    this.userListRef = this.fireStore.collection<User>(`/usersList`);
+    this.storage.get('user').then((user) => {
+      this.user = user;
+  });
   }
 
   // login method
@@ -115,5 +126,23 @@ export class UserDataProvider {
   // set user to device storage
   setUser(user: User): void {
     this.storage.set('user', user);
+  }
+
+  getUserData(): Observable<User[]> {
+    return this.userListRef.snapshotChanges().map(actions => {
+      return actions.map(action => {
+        let data = action.payload.doc.data() as User;
+        const id = action.payload.doc.id;
+        data['id'] = id;
+        return data;
+      });
+    });
+  }
+  getUser(){
+    return this.user;
+  }
+  updateData(user:User){
+    this.user = user;
+    this.storage.set('user',user);
   }
 }

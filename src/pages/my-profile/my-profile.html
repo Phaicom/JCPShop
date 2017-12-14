@@ -25,8 +25,12 @@
 
 
 <ion-content padding>
-<ion-img width="80" height="80" src="..." (click)='openCamera();'></ion-img>
-<button ion-button color="light" outline>0 Following</button>
+  
+<ion-img width="80" height="80" src={{user.photoURL}} ></ion-img>
+<ion-item (click)="editProfile()">{{user.displayName}}</ion-item>
+<ion-item>{{user.email}}</ion-item>
+
+<button ion-button color="light" outline >0 Following</button>
 <button ion-button color="light" outline>0 ผู้ติดตาม</button>
 
 <br>
