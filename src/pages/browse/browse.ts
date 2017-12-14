@@ -41,8 +41,8 @@ export class BrowsePage {
 
   }
 
-  shopDetail() {
-    this.navCtrl.push(SHOP_DETAIL_PAGE);
+  shopDetail(shopDetail:Market) {
+    this.navCtrl.push(SHOP_DETAIL_PAGE, { 'shopDetail': shopDetail });
   }
 
   styleDetail() {
