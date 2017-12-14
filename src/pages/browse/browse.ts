@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { REVIEW_DETAIL_PAGE, SHOP_DETAIL_PAGE, STYLE_DETAIL_PAGE, ALL_BRAND_PAGE, ALL_REVIEW_PAGE, ALL_STYLE_PAGE } from '../pages.constants';
-
+import { MarketDataProvider } from "../../providers/providers";
+import { Market } from "../../models/market";
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the BrowsePage page.
@@ -18,12 +20,16 @@ import { REVIEW_DETAIL_PAGE, SHOP_DETAIL_PAGE, STYLE_DETAIL_PAGE, ALL_BRAND_PAGE
 })
 export class BrowsePage {
 
+    brandData:Observable<Market[]>;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public events: Events,
+    public marketDataProvider: MarketDataProvider,
     private storage: Storage
   ) {
+    this.brandData = this.marketDataProvider.getMarket();
   }
 
   ionViewDidLoad() {

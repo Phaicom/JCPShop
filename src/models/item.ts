@@ -7,9 +7,11 @@ export class Item {
   like: number;
   date: string; // sale date
   amount: number;
-  category: string;
-  inStock: string;
+  category: Array<string>;
+  inStock: number;
+  variation:string;
   readyToShip: number;
+  logistic: string;
   payment: string;
   iid: string;
   mid: string;
