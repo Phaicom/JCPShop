@@ -64,6 +64,7 @@ export class MarketPage {
       photoProfileURL: 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/23471922_1466938716689424_6171403569327958054_n.jpg?oh=4fa0b540bae022c04a2054ca6fc7aec9&oe=5ACE5FAD',
       photoCoverURL: 'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/24799511_1488122064571089_8968755720877895570_o.jpg?oh=f7212133364a717d93a13992ef2f62d3&oe=5A88FA0E',
       description: 'จำหน่ายรองเท้าแบรนด์เนม limited edition สนใจรุ่นไหน แบรนด์อะไร สอบถามเข้ามาได้เลยครับ',
+      follow: 0,
       date: createTime.toISOString(),
       mid: 'MA6012001'
     }

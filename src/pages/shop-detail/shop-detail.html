@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar hide-tabs>
-    <ion-title>shop-detail</ion-title>
+    <ion-title>{{shopDetail.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,21 +15,21 @@
 
 <ion-content style="background-color: #ececec;">
 
-  <div style="height: 100px; background-image: url(https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950);" (click)="showPhotoViewer('https://ununsplash.imgix.net/photo-1421091242698-34f6ad7fc088?fit=crop&fm=jpg&h=650&q=75&w=950')">
+  <div style="height: 100px; background-image: url({{shopDetail.photoCoverURL}});" (click)="showPhotoViewer(shopDetail.photoProfileURL)">
 
   </div>
   <div align="center" style="margin-top: -5px;background-color:white;">
-    <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/25182076_1799906193377194_1265009072374340417_o.jpg?oh=a93899189cbaa84f214e016590b361fb&oe=5AC153CF" class="picture" align="center" (click)="showPhotoViewer('https://devdactic.com/wp-content/uploads/2017/04/ionic-image-gallery-header-720x400.png')"/>
+    <img src="{{shopDetail.photoProfileURL}}" class="picture" align="center" (click)="showPhotoViewer(shopDetail.photoProfileURL)"/>
     <button ion-button color="red" id="btnFollow">Follow</button>
     <div>
-      <span>Shop name &nbsp;<ion-icon name="mail"></ion-icon></span>
+      <span>{{shopDetail.name}} &nbsp;<ion-icon name="mail"></ion-icon></span>
     </div>
     <div>
-      <span><b>4</b> &nbsp;Followers</span>
+      <span><b>{{shopDetail.follow}}</b> &nbsp;Followers</span>
     </div>
     <ion-grid padding align="left">
       <ion-row>
-        <ion-col col-12><p>shop detail</p>
+        <ion-col col-12><p>{{shopDetail.description}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -6,6 +6,7 @@ export class Market {
   photoProfileURL: string;
   photoCoverURL: string;
   description: string;
+  follow:number;
   date: string; // opening date
   mid: string;
 

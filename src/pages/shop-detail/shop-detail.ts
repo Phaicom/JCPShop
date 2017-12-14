@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { Market } from "../../models/market";
 
 /**
  * Generated class for the ShopDetailPage page.
@@ -18,8 +19,11 @@ export class ShopDetailPage {
 
   saveStatus:boolean = false;
   tabShopDetail: string = "sellingList";
+  shopDetail:Market;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private photoViewer: PhotoViewer) {
+    this.shopDetail = this.navParams.get('shopDetail');
+    console.log(this.shopDetail);
   }
 
   ionViewDidLoad() {

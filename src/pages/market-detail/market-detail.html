@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>{{itemDetail.name}}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="presentModal()">
+      <button ion-button icon-only (click)="presentModal(itemDetail.photos[0])">
         <ion-icon name="share"></ion-icon>
       </button>
     </ion-buttons>
@@ -24,7 +24,7 @@
 	    <div>
 			<ion-slides class="image-slider" pager>
 				<ion-slide *ngFor="let img of itemDetail.photos">
-					<img src="{{img}}" class="thumb-img">
+					<img src="{{img}}" class="thumb-img" (click)="showPhotoViewer(img)">
 				</ion-slide>
 			</ion-slides>
 		</div>

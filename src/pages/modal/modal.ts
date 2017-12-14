@@ -16,7 +16,10 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class ModalPage {
 
+  picture:string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public socialSharing: SocialSharing) {
+    this.picture = this.navParams.get('picture');
   }
 
   ionViewDidLoad() {
@@ -28,10 +31,32 @@ export class ModalPage {
   }
 
   shareViaFackbook() {
-    this.socialSharing.shareViaFacebook('','https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14351999_1199453586757308_2142988214076800661_o.jpg?oh=78f173fc0c33025d81641d4bcf479c78&oe=5AC1F219','').then(() => {
-      // Success!
-    }).catch(() => {
-      // Error!
-    });
+   if (this.picture != "") {
+      this.socialSharing.shareViaFacebook('',this.picture,'').then(() => {
+        // Success!
+      }).catch(() => {
+        // Error!
+      });
+   }
+  }
+
+  shareViaInstagram() {
+    if (this.picture != "") {
+      this.socialSharing.shareViaInstagram('',this.picture).then(() => {
+        // Success!
+      }).catch(() => {
+        // Error!
+      });
+    }
+  }
+
+  shareViaEmail() {
+    if (this.picture != "") {
+      this.socialSharing.shareViaEmail('', '', [], [], [], this.picture).then(() => {
+        // Success!
+      }).catch(() => {
+        // Error!
+      });
+   }
   }
 }
