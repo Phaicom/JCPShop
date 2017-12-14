@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SEARCH_PAGE } from "../pages.constants";
+import { Edit_UserPage } from "../pages.constants";
 
 /**
  * Generated class for the MyProfilePage page.
@@ -29,23 +30,18 @@ export class MyProfilePage {
     console.log('ionViewDidLoad MyProfilePage');
   }
 
-<<<<<<< HEAD
+ 
   openSearch() {
     this.storage.set('before:search', 3);
     this.events.publish('open:search');
   }
 
-  openCamera() {
-    alert("TestCam");
-=======
+ 
+
   openCamera(){
-  	alert("TestCam");
+  	this.navCtrl.push(Edit_UserPage);
   }
 
-  openSearch() {
-    this.events.publish('open:search');
-
->>>>>>> 49b7297e0b03e8dda323b80fcde71341334a4b22
-  }
+  
 
 }
