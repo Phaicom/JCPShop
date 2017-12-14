@@ -3,9 +3,16 @@ export class Item {
   name: string;
   description: string;
   photos: Array<string>; // array of photo path
+  view: number;
+  like: number;
   date: string; // sale date
   amount: number;
-  category: string;
+  category: Array<string>;
+  inStock: number;
+  variation:string;
+  readyToShip: number;
+  logistic: string;
+  payment: string;
   iid: string;
   mid: string;
 

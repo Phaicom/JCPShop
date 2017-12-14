@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>market-detail</ion-title>
+    <ion-title>{{itemDetail.name}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="presentModal()">
         <ion-icon name="share"></ion-icon>
@@ -23,7 +23,7 @@
 	  <ion-card-header no-padding no-margin>
 	    <div>
 			<ion-slides class="image-slider" pager>
-				<ion-slide *ngFor="let img of images">
+				<ion-slide *ngFor="let img of itemDetail.photos">
 					<img src="{{img}}" class="thumb-img">
 				</ion-slide>
 			</ion-slides>
@@ -31,16 +31,16 @@
 		<ion-grid>
 		  <ion-row>
 		    <ion-col col-7 align="left" class="countState">
-		    	<ion-icon name="eye"></ion-icon> &nbsp; 12345 &nbsp; <ion-icon name="heart-outline"></ion-icon> &nbsp; 1
+		    	<ion-icon name="eye"></ion-icon> &nbsp; {{itemDetail.view}} &nbsp; <ion-icon name="heart-outline"></ion-icon> &nbsp; {{itemDetail.like}}
 		    </ion-col>
 		    <ion-col col-5 align="right"><button ion-button class="save" color="light"><ion-icon name="heart-outline"></ion-icon> &nbsp; Save</button></ion-col>
 		  </ion-row>
 		  <ion-row>
 		  	<ion-col col-12>
-		  		<b>Product name</b>
+		  		<b>{{itemDetail.name}}</b>
 		  	</ion-col>
 		  	<ion-col col-12>
-		  		<b>Price</b>
+		  		<b>{{itemDetail.amount}} &nbsp;THB</b>
 		  	</ion-col>
 		  </ion-row>
 		</ion-grid>
@@ -50,7 +50,7 @@
 	
 	<ion-card no-padding no-margin style="width: 100%;">
 	  <ion-card-content>
-	    <p>Description</p>
+	    <p>{{itemDetail.description}}</p>
 	  </ion-card-content>		
 	</ion-card>
 
@@ -73,7 +73,7 @@
 	    <ion-grid>
 	    	<ion-row>
 	    		<ion-col col-5>Category</ion-col>
-	    		<ion-col col-7>dummy</ion-col>
+	    		<ion-col col-7 ><p *ngFor="let category of itemDetail.category">{{category}}</p></ion-col>
 	    	</ion-row>
 	    </ion-grid>		
 	</ion-card>
@@ -81,7 +81,7 @@
 	    <ion-grid>
 	    	<ion-row>
 	    		<ion-col col-5>In Stock</ion-col>
-	    		<ion-col col-7>dummy</ion-col>
+	    		<ion-col col-7>{{itemDetail.inStock}} &nbsp;Items</ion-col>
 	    	</ion-row>
 	    </ion-grid>		
 	</ion-card>
@@ -89,7 +89,7 @@
 	    <ion-grid>
 	    	<ion-row>
 	    		<ion-col col-5>Raady to ship in</ion-col>
-	    		<ion-col col-7>dummy</ion-col>
+	    		<ion-col col-7>{{itemDetail.readyToShip}} &nbsp;Days</ion-col>
 	    	</ion-row>
 	    </ion-grid>		
 	</ion-card>
@@ -97,7 +97,7 @@
 	    <ion-grid>
 	    	<ion-row>
 	    		<ion-col col-5>Logistic</ion-col>
-	    		<ion-col col-7>dummy</ion-col>
+	    		<ion-col col-7>{{itemDetail.logistic}}</ion-col>
 	    	</ion-row>
 	    </ion-grid>		
 	</ion-card>
@@ -105,7 +105,7 @@
 	    <ion-grid>
 	    	<ion-row>
 	    		<ion-col col-5>Payment</ion-col>
-	    		<ion-col col-7>dummy</ion-col>
+	    		<ion-col col-7>{{itemDetail.payment}}</ion-col>
 	    	</ion-row>
 	    </ion-grid>		
 	</ion-card>

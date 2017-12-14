@@ -1,6 +1,6 @@
 page-browse {
 	.inner {
-		width: 1200px;
+		width: 900px;
 		height: 100%;
 		padding: 10px;
 		p {
@@ -9,6 +9,11 @@ page-browse {
 		div {
 			padding: 5px;
 			display: table-cell;
+		}
+
+		img {
+			width: 100px;
+			height: 100px;
 		}
 	}
 

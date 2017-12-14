@@ -34,17 +34,9 @@
 
   <ion-scroll scrollX="true" style="width: 100%; height: 180px">
     <div class="inner">
-      <div (click)="shopDetail()">
-        <img src="125-125.png">
-        <p align="center">Brand</p>
-      </div>
-      <div>
-        <img src="125-125.png">
-        <p align="center">Brand</p>
-      </div>
-      <div>
-        <img src="125-125.png">
-        <p align="center">Brand</p>
+      <div *ngFor="let brand of brandData | async">
+        <img src="{{brand.photoProfileURL}}" (click)="shopDetail()">
+        <p align="center">{{brand.name}}</p>
       </div>
     </div>
   </ion-scroll>
@@ -60,37 +52,37 @@
     <ion-row>
       <ion-col col-6 no-margin>
         <ion-card (click)="reviewDetail()">
-            <img src="125-100.png">
+            <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB">
+            <p class="ellipsis">สันคมมีดวัดใจ เขาช้างเผือก</p>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6 no-margin>
+        <ion-card>
+            <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB">
             <p class="ellipsis">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </ion-card>
       </ion-col>
       <ion-col col-6 no-margin>
         <ion-card>
-            <img src="125-100.png">
+            <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB">
             <p class="ellipsis">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </ion-card>
       </ion-col>
       <ion-col col-6 no-margin>
         <ion-card>
-            <img src="125-100.png">
+            <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB">
             <p class="ellipsis">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </ion-card>
       </ion-col>
       <ion-col col-6 no-margin>
         <ion-card>
-            <img src="125-100.png">
+            <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB">
             <p class="ellipsis">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </ion-card>
       </ion-col>
       <ion-col col-6 no-margin>
         <ion-card>
-            <img src="125-100.png">
-            <p class="ellipsis">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        </ion-card>
-      </ion-col>
-      <ion-col col-6 no-margin>
-        <ion-card>
-            <img src="125-100.png">
+            <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB">
             <p class="ellipsis">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </ion-card>
       </ion-col>
