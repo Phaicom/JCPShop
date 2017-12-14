@@ -34,4 +34,9 @@ export class FollowingPage {
     this.events.publish('open:search');
   }
 
+  openInbox() {
+    this.storage.set('before:search', 0);
+    this.events.publish('open:inbox');
+  }
+
 }
