@@ -29,7 +29,6 @@ export class MyProfilePage {
     console.log('ionViewDidLoad MyProfilePage');
   }
 
-<<<<<<< HEAD
   openSearch() {
     this.storage.set('before:search', 3);
     this.events.publish('open:search');
@@ -37,15 +36,6 @@ export class MyProfilePage {
 
   openCamera() {
     alert("TestCam");
-=======
-  openCamera(){
-  	alert("TestCam");
-  }
-
-  openSearch() {
-    this.events.publish('open:search');
-
->>>>>>> 49b7297e0b03e8dda323b80fcde71341334a4b22
   }
 
 }
