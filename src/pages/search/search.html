@@ -32,14 +32,20 @@
 
   <!-- items -->
   <ion-list inset *ngIf="searchType==='item'">
-    <ion-item *ngFor="let item of items | async">
+    <ion-item *ngFor="let item of items | async" (click)="openItemDetail(item)">
+      <ion-avatar item-left>
+        <img [src]="item.photos[0]">
+      </ion-avatar>
       {{item.name}}
     </ion-item>
   </ion-list>
 
   <!-- markets -->
   <ion-list inset *ngIf="searchType==='shop'">
-    <ion-item *ngFor="let market of markets | async">
+    <ion-item *ngFor="let market of markets | async" (click)="openMarketDetail(market)">
+      <ion-avatar item-left>
+        <img [src]="market.photoProfileURL">
+      </ion-avatar>
       {{market.name}}
     </ion-item>
   </ion-list>

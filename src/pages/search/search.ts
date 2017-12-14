@@ -4,6 +4,7 @@ import { ItemDataProvider, MarketDataProvider } from "../../providers/providers"
 import { Observable } from 'rxjs/Observable';
 import { Item } from '../../models/item';
 import { Market } from '../../models/market';
+import { MARKET_DETAIL_PAGE, SHOP_DETAIL_PAGE } from "../pages.constants";
 
 /**
  * Generated class for the SearchPage page.
@@ -80,6 +81,14 @@ export class SearchPage {
           return data;
       });
     });
+  }
+
+  openItemDetail(item: Item) {
+    this.navCtrl.push(MARKET_DETAIL_PAGE, { 'itemDetail': item });
+  }
+
+  openMarketDetail(market: Market) {
+    this.navCtrl.push(SHOP_DETAIL_PAGE);
   }
 
 }
