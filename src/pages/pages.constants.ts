@@ -17,3 +17,4 @@ export const ALL_STYLE_PAGE = 'AllStylePage';
 export const SEARCH_PAGE = 'SearchPage';
 
 export const MODAL_PAGE = 'ModalPage';
+export const INBOX_PAGE = 'InboxPage';
