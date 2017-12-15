@@ -12,7 +12,6 @@
 
 </ion-header>
 
-
 <ion-content style="background-color: #ececec;">
 
   <!-- <div style="height: 100px; background-image: url({{shopDetail.photoCoverURL}});" (click)="showPhotoViewer(shopDetail.photoProfileURL)"> -->
@@ -21,7 +20,8 @@
   </div>
   <div align="center" style="margin-top: -5px;background-color:white;">
     <img src="{{shopDetail.photoProfileURL}}" class="picture" align="center" (click)="showPhotoViewer(shopDetail.photoProfileURL)"/>
-    <button ion-button color="red" id="btnFollow" (click)="following()">Follow</button>
+    <button ion-button color="red" id="btnFollow" *ngIf="buttonCheck===false"  (click)="follow()">Follow</button>
+    <button ion-button color="black" id="btnFollow" *ngIf="buttonCheck===true"  (click)="unfollow()">unFollow</button>
     <div>
       <span>{{shopDetail.name}} &nbsp;<ion-icon name="mail"></ion-icon></span>
     </div>

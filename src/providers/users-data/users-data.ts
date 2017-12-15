@@ -15,6 +15,7 @@ export class UsersDataProvider {
 
   user: User;
   usersListRef: AngularFirestoreCollection<User>;
+  users:Observable<User[]>;
 
   constructor(
     public fireStore: AngularFirestore,
@@ -53,6 +54,14 @@ export class UsersDataProvider {
   }
 
   getUserProfile(){
+    this.users = this.getUser();
+    this.users = this.users.map(user => {
+      return user.filter(data => {
+        if (data.displayName === this.user.displayName) {
+          return data;
+        }
+      })
+    });
     return this.user;
   }
 

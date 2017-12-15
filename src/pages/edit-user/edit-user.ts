@@ -28,7 +28,7 @@ export class EditUserPage {
   }
 
   updateData(){
-    alert(this.user.id);
+    
   	this.userData.updateUser(this.user);
   	this.navCtrl.pop();
   }

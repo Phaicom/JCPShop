@@ -126,7 +126,9 @@ export class UserDataProvider {
     this.storage.set('user', user);
   }
 
- 
+ getUser(){
+   return this.userListRef;
+ }
   
   
 }
