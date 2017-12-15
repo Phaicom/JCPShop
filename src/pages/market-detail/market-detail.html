@@ -45,17 +45,17 @@
 		  </ion-row>
 		</ion-grid>
 	  </ion-card-header>
-	
+
 	</ion-card>
-	
+
 	<ion-card no-padding no-margin style="width: 100%;">
 	  <ion-card-content>
 	    <p>{{itemDetail.description}}</p>
-	  </ion-card-content>		
+	  </ion-card-content>
 	</ion-card>
 
 	<ion-card no-padding no-margin style="width: 100%;margin-top: 10px;margin-bottom: 10px;">
-	  	<ion-grid *ngFor="let shop of markets | async">	
+	  	<ion-grid *ngFor="let shop of markets | async">
 			  <ion-row>
 			    <ion-col col-2 align="left"><img class="mini" src="{{shop.photoProfileURL}}" (click)="goShopDetailPage(shop)"/></ion-col>
 			    <ion-col col-4 style="padding-left: 5px;"><b (click)="goShopDetailPage(shop)">{{shop.name}}</b><br><b style="font-size: 6pt;color: green;" (click)="goShopDetailPage(shop)">Verified</b></ion-col>
@@ -66,7 +66,7 @@
 	    			<button ion-button style="background-color: #007aff; height: 25px; font-size: 8pt;">Follow</button>
 	    		</ion-col>
 			  </ion-row>
-			</ion-grid>	
+			</ion-grid>
 	</ion-card>
 
 	<ion-card no-padding no-margin style="width: 100%;">
@@ -75,7 +75,7 @@
 	    		<ion-col col-5>Category</ion-col>
 	    		<ion-col col-7 ><p *ngFor="let category of itemDetail.category">{{category}}</p></ion-col>
 	    	</ion-row>
-	    </ion-grid>		
+	    </ion-grid>
 	</ion-card>
 	<ion-card no-padding no-margin style="width: 100%;">
 	    <ion-grid>
@@ -83,7 +83,7 @@
 	    		<ion-col col-5>In Stock</ion-col>
 	    		<ion-col col-7>{{itemDetail.inStock}} &nbsp;Items</ion-col>
 	    	</ion-row>
-	    </ion-grid>		
+	    </ion-grid>
 	</ion-card>
 	<ion-card no-padding no-margin style="width: 100%;margin-top: 10px;">
 	    <ion-grid>
@@ -91,7 +91,7 @@
 	    		<ion-col col-5>Raady to ship in</ion-col>
 	    		<ion-col col-7>{{itemDetail.readyToShip}} &nbsp;Days</ion-col>
 	    	</ion-row>
-	    </ion-grid>		
+	    </ion-grid>
 	</ion-card>
 	<ion-card no-padding no-margin style="width: 100%;">
 	    <ion-grid>
@@ -99,7 +99,7 @@
 	    		<ion-col col-5>Logistic</ion-col>
 	    		<ion-col col-7>{{itemDetail.logistic}}</ion-col>
 	    	</ion-row>
-	    </ion-grid>		
+	    </ion-grid>
 	</ion-card>
 	<ion-card no-padding no-margin style="width: 100%;">
 	    <ion-grid>
@@ -107,7 +107,7 @@
 	    		<ion-col col-5>Payment</ion-col>
 	    		<ion-col col-7>{{itemDetail.payment}}</ion-col>
 	    	</ion-row>
-	    </ion-grid>		
+	    </ion-grid>
 	</ion-card>
 
 	<ion-card no-margin style="width: 100%;margin-top: 10px;margin-bottom: 10px;">
@@ -122,14 +122,14 @@
 	    			<input type="text" style="width: 100%;" />
 	    		</ion-col>
 	    	</ion-row>
-	    </ion-grid>		
+	    </ion-grid>
 	</ion-card>
-		
+
 	<div style="height: 60px;"></div>
 
 	<ion-footer position="bottom" bottom>
 		<ion-toolbar position="bottom" id="footer">
-			<button ion-button class="add" tabsPlacement="bottom" end>Add to Cart</button>
+			<button ion-button class="add" tabsPlacement="bottom" (click)="addToCart()" end>Add to Cart</button>
 		</ion-toolbar>
 	</ion-footer>
 </ion-content>

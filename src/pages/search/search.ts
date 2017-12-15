@@ -88,7 +88,7 @@ export class SearchPage {
   }
 
   openMarketDetail(market: Market) {
-    this.navCtrl.push(SHOP_DETAIL_PAGE);
+    this.navCtrl.push(SHOP_DETAIL_PAGE, { 'shopDetail': market });
   }
 
 }

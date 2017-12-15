@@ -105,6 +105,16 @@ export class MarketPage {
     this.events.publish('open:search');
   }
 
+  openInbox() {
+    this.storage.set('before:search', 1);
+    this.events.publish('open:inbox');
+  }
+
+  openCart() {
+    this.storage.set('before:search', 1);
+    this.events.publish('open:cart');
+  }
+
   save() {
     if (this.saveStatus == false) {
       this.saveStatus = true;

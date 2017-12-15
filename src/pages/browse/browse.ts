@@ -87,4 +87,14 @@ export class BrowsePage {
     this.storage.set('before:search', 2);
     this.events.publish('open:search');
   }
+
+  openInbox() {
+    this.storage.set('before:search', 2);
+    this.events.publish('open:inbox');
+  }
+
+  openCart() {
+    this.storage.set('before:search', 2);
+    this.events.publish('open:cart');
+  }
 }

@@ -18,3 +18,5 @@ export const SEARCH_PAGE = 'SearchPage';
 
 export const MODAL_PAGE = 'ModalPage';
 export const INBOX_PAGE = 'InboxPage';
+export const CART_PAGE = 'CartPage';
+export const CHECK_OUT_PAGE = 'CheckOutPage';

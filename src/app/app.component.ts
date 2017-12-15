@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { OneSignal } from '@ionic-native/onesignal';
 import { InboxDataProvider } from "../providers/providers";
 
-import { LOGIN_PAGE, TABS_PAGE, SEARCH_PAGE, INBOX_PAGE } from '../pages/pages.constants';
+import { LOGIN_PAGE, TABS_PAGE, SEARCH_PAGE, INBOX_PAGE, CART_PAGE } from '../pages/pages.constants';
 import { Noti } from '../models/noti';
 
 @Component({
@@ -32,6 +32,9 @@ export class MyApp {
     this.listenToLoginEvents();
     this.listenToSearchEvents();
     this.listenToInboxEvents();
+    this.listenToCartEvents();
+
+    this.storage.set('cart', JSON.stringify([]));
   }
 
 
@@ -84,6 +87,12 @@ export class MyApp {
   listenToInboxEvents() {
     this.events.subscribe('open:inbox', () => {
       this.openPage(INBOX_PAGE);
+    });
+  }
+
+  listenToCartEvents() {
+    this.events.subscribe('open:cart', () => {
+      this.openPage(CART_PAGE);
     });
   }
 

@@ -34,8 +34,12 @@ export class MyProfilePage {
     this.events.publish('open:search');
   }
 
+  openCart() {
+    this.storage.set('before:search', 3);
+    this.events.publish('open:cart');
+  }
+
   openCamera() {
     alert("TestCam");
   }
-
 }
