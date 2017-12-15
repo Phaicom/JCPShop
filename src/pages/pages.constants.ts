@@ -17,4 +17,8 @@ export const ALL_STYLE_PAGE = 'AllStylePage';
 export const SEARCH_PAGE = 'SearchPage';
 
 export const MODAL_PAGE = 'ModalPage';
+<<<<<<< HEAD
 export const Edit_UserPage = 'EditUserPage';
+=======
+export const INBOX_PAGE = 'InboxPage';
+>>>>>>> 2a4a0202731471df3e6608ae81204fa8ae1f36e3

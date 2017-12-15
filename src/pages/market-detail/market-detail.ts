@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
-import { MODAL_PAGE } from '../pages.constants';
+import { MODAL_PAGE, SHOP_DETAIL_PAGE } from '../pages.constants';
 import { Item } from "../../models/item";
 import { PhotoViewer } from '@ionic-native/photo-viewer';
-import { MarketDataProvider } from "../../providers/providers";
+import { MarketDataProvider, ItemDataProvider } from "../../providers/providers";
 import { Market } from "../../models/market";
 import { Observable } from 'rxjs/Observable';
 /**
@@ -22,17 +22,26 @@ import { Observable } from 'rxjs/Observable';
 export class MarketDetailPage {
 
   itemDetail:Item;
-  market:Observable<Market[]>;
-
+  markets:Observable<Market[]>;
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public modalCtrl: ModalController,
               public photoViewer: PhotoViewer,
+              public itemDataProvider: ItemDataProvider,
               public marketDataProvider: MarketDataProvider) {
     this.itemDetail = this.navParams.get('itemDetail');
-    this.market = this.marketDataProvider.getMarket();
+    this.plusView(); // plus view everytime when user click
+    this.markets = this.marketDataProvider.getMarket();
 
-    console.log(this.itemDetail);
+    this.markets = this.markets.map(market => {
+      return market.filter(data => {
+        if (this.itemDetail.mid == data.mid) {
+          return data;
+        }
+      })
+    });
+
+    console.log(this.markets);
   }
 
   ionViewDidLoad() {
@@ -46,6 +55,15 @@ export class MarketDetailPage {
 
   showPhotoViewer(src:string) {
     this.photoViewer.show(src);
+  }
+
+  plusView() {
+    this.itemDetail.view++;
+    this.itemDataProvider.updateItem(this.itemDetail);
+  }
+
+  goShopDetailPage(shop:Market) {
+    this.navCtrl.push(SHOP_DETAIL_PAGE, { 'shopDetail': shop });
   }
 
 }

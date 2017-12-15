@@ -1,0 +1,12 @@
+page-inbox {
+  .empty-text {
+    text-align: center;
+    padding-top: 5em;
+  }
+  .policy {
+    padding: 1em 0 1em 0;
+    & p {
+      font-size: 11px;
+    }
+  }
+}

@@ -29,9 +29,9 @@ export class MarketPage {
   marketType: string = "editor";
   marketData: Observable<Market[]>;
   itemData: Observable<Item[]>;
-  images = ['https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14351999_1199453586757308_2142988214076800661_o.jpg?oh=78f173fc0c33025d81641d4bcf479c78&oe=5AC1F219',
-    'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14258109_1181056208597046_1010626863625118272_o.jpg?oh=0b08a7f8b84b48a46ce78e542d54ac0b&oe=5A9168FB',
-    'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/13522775_1042965985739403_3268806380087284009_o.jpg?oh=25f6db84d173c2c77136f662e825a47d&oe=5AD468F7'];
+  images = ['https://scontent.fbkk12-2.fna.fbcdn.net/v/t1.0-9/19424322_1459121984134802_7411474100775509720_n.jpg?oh=e3a7ab6efc2a745507aa9fc8ef037198&oe=5AC0B71A',
+    'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/22179842_10155729886927442_1150658365678161148_o.jpg?oh=1bc966f8aecbfa8017018b76226732bb&oe=5ACE8C36',
+    'https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/22220038_10155729590632442_1510877914731475593_o.jpg?oh=8991bf6721e3a01f2aa4d767c6bf3f69&oe=5AC2915F'];
 
 
   constructor(
@@ -48,10 +48,6 @@ export class MarketPage {
     this.marketData = marketDataProvider.getMarket();
     this.itemData = itemDataProvider.getItem();
 
-
-    // this.marketData.forEach(function (element) {
-    //   console.log(element);
-    // });
   }
 
   addMarket() {

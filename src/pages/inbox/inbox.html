@@ -1,0 +1,38 @@
+<!--
+  Generated template for the InboxPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="closeInbox()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Inbox</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item class="policy">
+    <ion-avatar item-left>
+      <img src="https://dummyimage.com/50x50/000/fff">
+    </ion-avatar>
+    <p>แจ้งเปลี่ยน Policy ในการเปิดร้านกับ ShopSpot</p>
+  </ion-item>
+  <ion-list inset>
+    <ion-item-sliding *ngFor="let noti of notis | async">
+      <ion-item>
+        {{noti.title}}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="removeNoti(noti)">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

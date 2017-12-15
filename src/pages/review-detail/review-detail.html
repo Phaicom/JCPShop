@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar hide-tabs>
-    <ion-title>สันคมมีดวัดใจ เขาช้างเผือก</ion-title>
+    <ion-title>{{reviewDetail.title}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only>
         <ion-icon name="share"></ion-icon>
@@ -21,11 +21,11 @@
 <ion-content parallax-header style="background-color: #ececec;">
 
   <div>
-    <img src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/15799858_10211355388018628_6129378754408540873_o.jpg?oh=cae774347f481c387ab3820d916aade1&oe=5AC2D0AB"
+    <img src="{{reviewDetail.photoHeader}}"
     />
   </div>
-
-  <div [innerHTML]="detail" padding>
+  <b style="color: red;padding-left: 5%;">{{reviewDetail.title}}</b>
+  <div [innerHTML]="reviewDetail.content" padding>
   </div>
 
 </ion-content>

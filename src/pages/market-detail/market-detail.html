@@ -55,11 +55,11 @@
 	</ion-card>
 
 	<ion-card no-padding no-margin style="width: 100%;margin-top: 10px;margin-bottom: 10px;">
-	  	<ion-grid>	
+	  	<ion-grid *ngFor="let shop of markets | async">	
 			  <ion-row>
-			    <ion-col col-2 align="left"><img class="mini" src="https://scontent.fbkk12-2.fna.fbcdn.net/v/t31.0-8/14351999_1199453586757308_2142988214076800661_o.jpg?oh=78f173fc0c33025d81641d4bcf479c78&oe=5AC1F219"/></ion-col>
-			    <ion-col col-3 style="padding-left: 5px;"><b>Shop name</b><br><b style="font-size: 6pt;color: green;">Verified</b></ion-col>
-			    <ion-col col-7 align="right">
+			    <ion-col col-2 align="left"><img class="mini" src="{{shop.photoProfileURL}}" (click)="goShopDetailPage(shop)"/></ion-col>
+			    <ion-col col-4 style="padding-left: 5px;"><b (click)="goShopDetailPage(shop)">{{shop.name}}</b><br><b style="font-size: 6pt;color: green;" (click)="goShopDetailPage(shop)">Verified</b></ion-col>
+			    <ion-col col-6 align="right">
 			    	<button ion-button align="right" style="color: #007aff;background-color: rgba(0,0,0,0);width: 36px;height: 25px;">
 			    		<ion-icon name="text"></ion-icon>
 			    	</button> &nbsp;
