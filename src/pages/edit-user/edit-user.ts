@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../models/user';
-import { UserDataProvider } from "../../providers/user-data/user-data";
+import { UsersDataProvider } from "../../providers/users-data/users-data";
 
 /**
  * Generated class for the EditUserPage page.
@@ -19,8 +19,8 @@ export class EditUserPage {
 
 	user:User;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public userData: UserDataProvider) {
-  	this.user = userData.getUser();
+  constructor(public navCtrl: NavController, public navParams: NavParams,public userData: UsersDataProvider) {
+  	this.user = this.navParams.get("user");
   }
 
   ionViewDidLoad() {
@@ -28,7 +28,8 @@ export class EditUserPage {
   }
 
   updateData(){
-  	this.userData.updateData(this.user);
+    alert(this.user.id);
+  	this.userData.updateUser(this.user);
   	this.navCtrl.pop();
   }
 

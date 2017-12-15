@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { Market } from "../../models/market";
+import { UserDataProvider } from "../../providers/user-data/user-data";
+import { User } from "../../models/user";
 
 /**
  * Generated class for the ShopDetailPage page.
@@ -17,12 +19,14 @@ import { Market } from "../../models/market";
 })
 export class ShopDetailPage {
 
+  user:User;
   saveStatus:boolean = false;
   tabShopDetail: string = "sellingList";
   shopDetail:Market;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private photoViewer: PhotoViewer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private photoViewer: PhotoViewer, public userData:UserDataProvider) {
     this.shopDetail = this.navParams.get('shopDetail');
+    this.user = userData.getUser();
     console.log(this.shopDetail);
   }
 
@@ -40,6 +44,10 @@ export class ShopDetailPage {
     } else {
       this.saveStatus = false;
     }
+  }
+
+  following(){
+    
   }
 
 }

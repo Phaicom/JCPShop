@@ -3,7 +3,7 @@ import { Storage } from '@ionic/storage';
 import { Events, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SEARCH_PAGE } from "../pages.constants";
 import { Edit_UserPage } from "../pages.constants";
-import { UserDataProvider } from "../../providers/user-data/user-data";
+import { UsersDataProvider } from "../../providers/users-data/users-data";
 import { User } from "../../models/user";
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
@@ -30,10 +30,10 @@ export class MyProfilePage {
     public navParams: NavParams,
     public events: Events,
     private storage: Storage,
-    public userData: UserDataProvider
+    public usersData: UsersDataProvider
   ) {
-    this.userList = userData.getUserData();
-    this.user = userData.getUser();
+    this.userList = usersData.getUser();
+    this.user = usersData.getUserProfile();
   }
 
   ionViewDidLoad() {
@@ -48,8 +48,8 @@ export class MyProfilePage {
     this.events.publish('open:search');
   }
 
-  editProfile(){
-  	this.navCtrl.push(Edit_UserPage);
+  editProfile(user:User){
+  	this.navCtrl.push(Edit_UserPage, {user});
     
   }
 

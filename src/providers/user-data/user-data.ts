@@ -22,7 +22,6 @@ export class UserDataProvider {
 
   HAS_LOGGED_IN = 'hasLoggedIn';
   userListRef: AngularFirestoreCollection<User>;
-  user: User;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -48,7 +47,8 @@ export class UserDataProvider {
         phoneNumber: +user.phoneNumber,
         photoURL: user.photoURL,
         providerId: user.providerId,
-        uid: user.uid
+        uid: user.uid,
+        mid: ['']
       }
 
       // add user to db if user not exist in db
@@ -74,9 +74,7 @@ export class UserDataProvider {
     });
 
     this.userListRef = this.fireStore.collection<User>(`/usersList`);
-    this.storage.get('user').then((user) => {
-      this.user = user;
-  });
+    
   }
 
   // login method
@@ -128,21 +126,7 @@ export class UserDataProvider {
     this.storage.set('user', user);
   }
 
-  getUserData(): Observable<User[]> {
-    return this.userListRef.snapshotChanges().map(actions => {
-      return actions.map(action => {
-        let data = action.payload.doc.data() as User;
-        const id = action.payload.doc.id;
-        data['id'] = id;
-        return data;
-      });
-    });
-  }
-  getUser(){
-    return this.user;
-  }
-  updateData(user:User){
-    this.user = user;
-    this.storage.set('user',user);
-  }
+ 
+  
+  
 }
