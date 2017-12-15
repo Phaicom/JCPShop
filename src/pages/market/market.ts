@@ -62,7 +62,8 @@ export class MarketPage {
       description: 'Bangkok\'s multi-brand stores bringing the best denim, tops, footwear and accessories from designers around the globe who craft them with pure passion.',
       follow: 0,
       date: createTime.toISOString(),
-      mid: 'MA6012004'
+      mid: 'MA6012004',
+      uid: []
     }
 
     console.log('market', this.market);

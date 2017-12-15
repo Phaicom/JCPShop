@@ -18,9 +18,13 @@ import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import { SocialSharing } from '@ionic-native/social-sharing';
+
+import { EditUserPage } from '../pages/edit-user/edit-user';
+
 import { ReviewDataProvider } from '../providers/review-data/review-data';
 import { OneSignal } from '@ionic-native/onesignal';
 import { InboxDataProvider } from '../providers/inbox-data/inbox-data';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBp4-vtfgPJebNGPlJ-mXtKFLPAuJ3Nx4Q",

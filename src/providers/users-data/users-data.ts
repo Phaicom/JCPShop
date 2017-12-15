@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { User } from "../../models/user";
 import { Observable } from 'rxjs/Observable';
+import { Storage } from '@ionic/storage';
 
 /*
   Generated class for the UsersDataProvider provider.
@@ -11,12 +12,20 @@ import { Observable } from 'rxjs/Observable';
 */
 @Injectable()
 export class UsersDataProvider {
+
+  user: User;
   usersListRef: AngularFirestoreCollection<User>;
+  users:Observable<User[]>;
 
   constructor(
-    public fireStore: AngularFirestore
+    public fireStore: AngularFirestore,
+    private storage: Storage
   ) {
     this.usersListRef = this.fireStore.collection<User>(`/usersList`);
+    this.storage.get('user').then((user) => {
+      this.user = user;
+  });
+
   }
 
   getUser(): Observable<User[]> {
@@ -40,6 +49,20 @@ export class UsersDataProvider {
 
   updateUser(user: User): void {
     this.usersListRef.doc(user.id).update(user);
+    this.user = user;
+    this.storage.set('user',user);
+  }
+
+  getUserProfile(){
+    this.users = this.getUser();
+    this.users = this.users.map(user => {
+      return user.filter(data => {
+        if (data.displayName === this.user.displayName) {
+          return data;
+        }
+      })
+    });
+    return this.user;
   }
 
 }

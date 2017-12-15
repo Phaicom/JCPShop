@@ -25,8 +25,17 @@
 
 
 <ion-content padding>
-<ion-img width="80" height="80" src="..." (click)='openCamera();'></ion-img>
-<button ion-button color="light" outline>0 Following</button>
+<ion-list *ngFor="let users of userList | async">
+    <ion-item *ngIf="users.uid===user.uid">
+      <ion-img width="80" height="80" src={{users.photoURL}} ></ion-img>
+      <ion-item (click)="editProfile(users)">{{users.displayName}}</ion-item>
+    <ion-item>{{users.email}}</ion-item>
+    </ion-item>
+  </ion-list>
+
+
+
+<button ion-button color="light" outline >0 Following</button>
 <button ion-button color="light" outline>0 ผู้ติดตาม</button>
 
 <br>

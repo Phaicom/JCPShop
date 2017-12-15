@@ -6,6 +6,7 @@ export class User {
   photoURL: string;
   providerId: string;
   uid: string;
+  mid: Array<string>;
 
   constructor(parameters) {
 

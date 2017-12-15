@@ -9,6 +9,7 @@ export class Market {
   follow:number;
   date: string; // opening date
   mid: string;
+  uid: Array<string>;
 
   constructor(parameters) {
 
